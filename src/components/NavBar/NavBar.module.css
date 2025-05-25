@@ -1,0 +1,24 @@
+/* components/Navbar/Navbar.module.css */
+.navbar {
+  background-color: #ffe600;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+}
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

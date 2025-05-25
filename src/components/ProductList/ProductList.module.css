@@ -1,0 +1,20 @@
+
+.productList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+.title {
+  padding: 0;
+    margin-left: 2%;
+    font-size: 24px;
+    text-align:left;
+    color: black;
+}
+.productContainer{
+  display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+ 
+    
+}
