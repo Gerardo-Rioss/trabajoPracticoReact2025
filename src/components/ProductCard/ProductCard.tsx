@@ -16,13 +16,12 @@ function ProductCard(props: ProductCardProps) {
       </div>
       <div className={style.cardContent}>
         <div className={style.cardHeader}>
-          <div className={style.id}>
-            <span>id:{id}</span>
-          </div>
+          <span className={style.id}>id:{id}</span>
           <h3 className={style.name}>{name}</h3>
+          <p className={style.price}>${price.toFixed(2)}</p>
+          <p className={style.description}>{description}</p>
         </div>
-        <p className={style.price}>${price.toFixed(2)}</p>
-        <p className={style.description}>{description}</p>
+        
         <button className={style.button}>Comprar</button>
       </div>
     </div>

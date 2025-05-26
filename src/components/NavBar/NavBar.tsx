@@ -5,8 +5,8 @@ export const NavBar = () => {
     <nav className={styles.navbar}>
       <div className={styles.logo}>Mercado Libre</div>
       <div className={styles.search}>
-        <input type="text" placeholder="Buscar productos, marcas y más..." />
-        <button type="submit">Buscar</button>
+        <input  type="text" placeholder="Buscar productos, marcas y más..." />
+        <button className={styles.buttonSearch}  type="submit">Buscar</button>
       </div>
       <div className={styles.links}>
         <a href="/">Inicio</a>

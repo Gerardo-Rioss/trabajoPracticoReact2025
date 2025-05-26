@@ -8,13 +8,13 @@ type ProductListProps = {
 function ProductList(props: ProductListProps) {
   const { title, description, children } = props;
   return (
-    <>
+    <div className={styles.container}>
       <h2 className={styles.title}>{title}</h2>
       <div className={styles.productList}>
         <p>{description}</p>
         <div className={styles.productContainer}>{children}</div>
       </div>
-    </>
+    </div>
   );
 }
 export default ProductList;
