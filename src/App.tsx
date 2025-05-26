@@ -8,7 +8,7 @@ function App() {
   return (
     <div className={styles.container}>
       <NavBar />
-      <ProductList title="Prueba">
+      <ProductList title="Inspirado en lo último que viste">
         <ProductCard
           id={1}
           name="Televisor Noblex 43 Pulgadas"
