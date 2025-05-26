@@ -57,6 +57,27 @@ const electronicosPopulares: Response = {
         description: "Tablet de 10.1 pulgadas, 32GB, con Alexa integrada",
         price: 149,
         image: "https://http2.mlstatic.com/D_NQ_NP_632481-MLA44172464184_112020-O.webp"
+      },
+      {
+        id: 106,
+        name: "Dron DJI Mavic 3",
+        description: "Dron profesional con cámara Hasselblad 4K",
+        price: 1599,
+        image: "https://images.bidcom.com.ar/resize?src=https://static.bidcom.com.ar/publicacionesML/productos/DRDJI034/1000x1000-DRDJI034.jpg&w=800&q=100"
+      },
+      {
+        id: 107,
+        name: "Monitor LG UltraWide",
+        description: "Monitor 34 pulgadas 1440p curvado",
+        price: 499,
+        image: "https://http2.mlstatic.com/D_685318-MLA54921513210_042023-O.jpg"
+      },
+      {
+        id: 108,
+        name: "Altavoz JBL PartyBox",
+        description: "Altavoz portátil con luces LED",
+        price: 299,
+        image: "https://oportunidades-vip.com.ar/wp-content/uploads/2024/12/Parlante_Portatil_Inalambrico_Bluetooth_Luces_Led_Gts-1360_D_774381-MLA81040854894_122024-O-1200x1200.jpg"
       }
     ]
   }
@@ -100,7 +121,29 @@ const hogarCocina: Response = {
         description: "Lámpara regulable con control remoto y 16 colores diferentes",
         price: 59,
         image: "https://http2.mlstatic.com/D_NQ_NP_679906-MLA47090756111_082021-O.webp"
-      }
+      },
+      {
+        id: 206,
+        name: "Purificador de aire Dyson",
+        description: "Purificador con filtro HEPA y control por app",
+        price: 549,
+        image: "https://dyson-h.assetsadobe2.com/is/image/content/dam/dyson/it/cooking/2021/AEM-TP09-overview-hero-cooking-v3.jpg?$responsive$&cropPathE=mobile&fit=stretch,1&fmt=pjpeg&wid=640"
+      },
+      {
+        id: 207,
+        name: "Cafetera Nespresso Vertuo",
+        description: "Cafetera con cápsulas y espumador de leche",
+        price: 179,
+        image: "https://http2.mlstatic.com/D_NQ_NP_729221-MLA82640614721_022025-O.webp"
+      },
+      {
+        id: 208,
+        name: "Batidora KitchenAid",
+        description: "Batidora profesional 5.5L con 10 velocidades",
+        price: 429,
+        image: "https://kaidarg.vtexassets.com/arquivos/ids/155737/image-eb561391e134465ea9f20f6562f2a8f0.jpg?v=638388840193600000"
+      },
+      
     ]
   }
 };
@@ -143,10 +186,90 @@ const deporteAireLibre: Response = {
         description: "Reloj GPS para running con monitor de frecuencia cardíaca",
         price: 249,
         image: "https://garmin.com.ar/Image/0/750_750-1161.jpg"
+      },
+      {
+        id: 306,
+        name: "Raqueta de tenis Wilson",
+        description: "Raqueta profesional Pro Staff",
+        price: 229,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3BjtstLS8zTx3EzoldUw9b4SGj4mpFAtoig&s"
+      },
+      {
+        id: 307,
+        name: "Pelota de fútbol Adidas",
+        description: "Pelota oficial Champions League",
+        price: 129,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi6slZjZEemOiXzBa0I2qYNxy4BZHf6SnsXveXe3A1kDx8L83Oe_hRYgtw6fA6AjVbZS8&usqp=CAU"
+      },
+      {
+        id: 308,
+        name: "Mesa de ping pong",
+        description: "Mesa regulable para interior/exterior",
+        price: 399,
+        image: "https://acdn-us.mitiendanube.com/stores/001/338/668/products/mesa-ping-pong-tb2000-1-6d12663565056d2dc817147531483923-1024-1024.jpg"
       }
     ]
   }
 };
+
+const destacadosMes: Response = {
+  mostViews: {
+    titleProductList: "Productos Destacados del Mes",
+    posts: [
+      {
+        id: 701,
+        name: "Cámara Sony Alpha A7 IV",
+        description: "Cámara mirrorless full frame 33MP con 4K/60p",
+        price: 2499,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-deZY7IRdXKJIwrf9om7qHt4FkvNAOi_epg&s",
+      },
+      {
+        id: 702,
+        name: "Bicicleta Eléctrica Trek",
+        description: "Bicicleta urbana con motor 250W y autonomía 70km",
+        price: 2899,
+        image: "https://http2.mlstatic.com/D_NQ_NP_649715-MLA79230444117_092024-O.webp",
+      },
+      {
+        id: 703,
+        name: "Mochila The North Face",
+        description: "Mochila resistente al agua 30L con portátil",
+        price: 129,
+        image: "https://cdn-images.farfetch-contents.com/25/13/93/12/25139312_55242724_1000.jpg",
+      },
+      {
+        id: 704,
+        name: "Consola PlayStation 5",
+        description: "Edición estándar con lector Blu-Ray 825GB",
+        price: 499,
+        image: "https://arsonyb2c.vtexassets.com/arquivos/ids/366581/Imagen-01_2000-x-2000-px.jpg.jpg?v=638826154074330000",
+      },
+      {
+        id: 705,
+        name: "Smart TV LG OLED 65''",
+        description: "TV 4K HDR con Dolby Vision y WebOS",
+        price: 1799,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu2PIWIwzDw-8U08xFOSRvSjcInaFeKUqHBA&s",
+      },
+      {
+        id: 706,
+        name: "Cafetera Breville Barista",
+        description: "Máquina espresso con molinillo integrado",
+        price: 699,
+        image: "https://cronicasfreelancer.com/wp-content/uploads/2023/04/sage-barista-express.jpg",
+      },
+      {
+        id: 707,
+        name: "Reloj Casio G-Shock",
+        description: "Resistente a golpes, agua 200m y solar",
+        price: 199,
+        image: "https://zonazero.com.ar/cdn/shop/files/gwg-1000-1a_seq1.jpg?v=1721085371",
+      }
+    ]
+  }
+};
+
+
 
 
 function App() {
@@ -182,6 +305,19 @@ function App() {
         </ProductList>
         <ProductList title={deporteAireLibre.mostViews.titleProductList}>
           {deporteAireLibre.mostViews.posts.map((post)=>{
+            return(
+            <ProductCard 
+            id={post.id} 
+            name={post.name} 
+            description={post.description} 
+            price={post.price} 
+            image={post.image} 
+            />
+            )
+          })}
+        </ProductList>
+        <ProductList title={destacadosMes.mostViews.titleProductList}>
+          {destacadosMes.mostViews.posts.map((post)=>{
             return(
             <ProductCard 
             id={post.id} 
