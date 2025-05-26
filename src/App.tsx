@@ -114,35 +114,35 @@ const deporteAireLibre: Response = {
         name: "Bicicleta montaña Trek Marlin 5",
         description: "Bicicleta de montaña con cuadro de aluminio y 21 velocidades",
         price: 649,
-        image: "https://trek.scene7.com/is/image/TrekBicycleProducts/Marlin5_22_35085_A_Portrait?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNpHsu8uFkLcMqRE4iWJ3OBWgVr29lJ2Fn7Q&s"
       },
       {
         id: 302,
         name: "Zapatillas running Nike Air Zoom",
         description: "Zapatillas para running con amortiguación Zoom Air y suela de goma",
         price: 129,
-        image: "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/3a1f5b9e-3c1a-4a7b-9b9e-9f9b9e9f9b9e/air-zoom-pegasus-39-running-shoes-2zXJQZ.png"
+        image: "https://media2.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-running-nike-air-zoom-pegasus-40-negra-510010dv3853001-1_1.jpg"
       },
       {
         id: 303,
         name: "Tienda de campaña Coleman",
         description: "Tienda para 4 personas, impermeable, fácil de armar",
         price: 149,
-        image: "https://www.coleman.com/dw/image/v2/BBGZ_PRD/on/demandware.static/-/Sites-master-catalog-coleman/default/dw4a1f1d1f/images/large/2000021185_C.jpg"
+        image: "https://m.media-amazon.com/images/I/51N9HzKaKhL._AC_SL1347_.jpg"
       },
       {
         id: 304,
         name: "Mancuernas ajustables",
         description: "Set de 2 mancuernas ajustables de 5-25kg cada una",
         price: 199,
-        image: "https://m.media-amazon.com/images/I/71Z+7eYy1BL._AC_UF1000,1000_QL80_.jpg"
+        image: "https://m.media-amazon.com/images/I/71mD9tv7h5L._AC_UF1000,1000_QL80_.jpg"
       },
       {
         id: 305,
         name: "Reloj deportivo Garmin Forerunner",
         description: "Reloj GPS para running con monitor de frecuencia cardíaca",
         price: 249,
-        image: "https://www.garmin.com/es-ES/p/739416/pn/010-02572-10"
+        image: "https://garmin.com.ar/Image/0/750_750-1161.jpg"
       }
     ]
   }
