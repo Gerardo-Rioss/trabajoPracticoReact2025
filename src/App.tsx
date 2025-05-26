@@ -71,35 +71,35 @@ const hogarCocina: Response = {
         name: "Robot aspirador Xiaomi Mi Robot",
         description: "Aspiradora inteligente con navegación láser y control por app",
         price: 299,
-        image: "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-robot-vacuum-mop-2-pro/section01.jpg"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBbTHqpJhK2AofK3BgcOy4JKskUxij964MzQ&s"
       },
       {
         id: 202,
         name: "Juego de sábanas algodón egipcio",
         description: "Juego de 4 piezas, 600 hilos, tamaño queen, color blanco",
         price: 89,
-        image: "https://m.media-amazon.com/images/I/71x6J0vJ1TL._AC_UF1000,1000_QL80_.jpg"
+        image: "https://acdn-us.mitiendanube.com/stores/004/961/185/products/whatsapp-image-2024-09-23-at-14-53-25-cc35f389dcb313461817271145134952-1024-1024.jpeg"
       },
       {
         id: 203,
         name: "Olla instantánea Duo Crisp",
         description: "Olla a presión eléctrica 8 en 1 con función de aire frito",
         price: 159,
-        image: "https://instantpot.com/wp-content/uploads/2020/09/duocrisp_8qt_hero-1.png"
+        image: "https://http2.mlstatic.com/D_NQ_NP_600515-MLA84033144575_042025-O.webp"
       },
       {
         id: 204,
         name: "Set de cuchillos profesionales",
         description: "Set de 6 cuchillos de acero inoxidable con bloque de madera",
         price: 129,
-        image: "https://m.media-amazon.com/images/I/71MvJQwJw4L._AC_UF1000,1000_QL80_.jpg"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk02vyqXKxTdMYoBGQigfKQGXABHigaytnXw&s"
       },
       {
         id: 205,
         name: "Lámpara de pie LED",
         description: "Lámpara regulable con control remoto y 16 colores diferentes",
         price: 59,
-        image: "https://m.media-amazon.com/images/I/71Z+7eYy1BL._AC_UF1000,1000_QL80_.jpg"
+        image: "https://http2.mlstatic.com/D_NQ_NP_679906-MLA47090756111_082021-O.webp"
       }
     ]
   }
