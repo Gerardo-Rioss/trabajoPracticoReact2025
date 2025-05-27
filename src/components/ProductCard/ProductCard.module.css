@@ -9,7 +9,7 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   transition: transform 0.1s ease, box-shadow 0.5s ease;
   cursor: pointer;
-  background-color: #FFE600;
+  background-color: #f5efed;
 }
 .imageContainer {
   position: relative;
@@ -48,10 +48,12 @@
 }
 .id {
   font-size: 12px;
+  visibility: hidden;
 }
 
 .name {
   padding: 0;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 14px;
   align-self: center;
   margin: 0;

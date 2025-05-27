@@ -1,8 +1,7 @@
 .container {
   padding: 20px;
-  margin: 10px 5% 10px 5%;
+  margin: 10px 7% 10px 7%;
   background-color: ghostwhite;
-  border: 1px solid #ccc;
   border-radius: 20px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
 }
