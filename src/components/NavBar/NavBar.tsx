@@ -34,11 +34,20 @@ export const NavBar = () => {
                         <a href="/">Creá tu cuenta</a>
                         <a href="/">Ingresá</a>
                         <a href="/">Mis compras</a>
+                        <a href="" >🛒</a>
                     </div>
                 </div>
 
+
+                <div className={styles.navCenterBottomArea}>
+                    <a href="">Categorías</a>
+                    <a href="">Ofertas</a>
+                </div>
+                <div className={styles.navRightTopArea}>
+                    <img className={styles.imgNavRightTop} src="https://http2.mlstatic.com/D_NQ_779354-MLA82788204133_022025-OO.webp" alt="Envío gratis en tu primera compra en Mercado Libre."></img>
+                </div>
+
                 
-                <div className={styles.navCenterBottomArea}></div>
             </div>
         </nav>
     );

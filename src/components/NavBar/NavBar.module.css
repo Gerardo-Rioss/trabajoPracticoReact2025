@@ -98,3 +98,20 @@ a {
     text-decoration: none;
     color: black;
 }
+
+/* nav Center Bottom Area */
+.navCenterBottomArea{
+  grid-area: nav-center-bottom;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* nav right top */
+.navRightTopArea{
+  grid-area: nav-right-top;
+}
+
+.imgNavRightTop{
+  width: 100%;
+}
