@@ -3,8 +3,18 @@ import { FiSearch } from "react-icons/fi";
 
 export const NavBar = () => {
   return (
-    <nav>
+    <nav className={styles.navHeader}>
       <div className={styles.navContainer}>
+
+      </div>
+
+
+
+
+
+
+
+      
         <div className={styles.navTop}>
           <div className={styles.imgContainer}>
             <img
@@ -38,7 +48,6 @@ export const NavBar = () => {
             </div>
           </div>
         </div>
-      </div>
     </nav>
   );
 };

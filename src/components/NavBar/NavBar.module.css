@@ -1,5 +1,9 @@
+.navHeader{
+  display:flex ;
+  justify-content: center;
+}
 .navContainer{
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   background-color: #ffe600;
   padding: 1% 5% 1% 5%;
@@ -8,7 +12,14 @@
   align-items: center;
   font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto,
     Arial, sans-serif;
-  gap: 2rem;
+  gap: 2rem; */
+  display: grid;
+  grid-template-columns: 162px minmax(340px, 588px) minmax(350px, 390px);
+  grid-template-rows: 40px 28px;
+  grid-column-gap: 20px;
+  padding: 8px 10px 12px 10px;
+  grid-row-gap: 12px;
+  
 }
 .navTop{
   display: flex;
@@ -50,9 +61,6 @@
 a {
   text-decoration: none;
   color: black;
-}
-.searchContainer{
-  
 }
 .search {
   display: flex;
