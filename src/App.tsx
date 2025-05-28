@@ -2,6 +2,7 @@ import { NavBar } from "./components/NavBar/NavBar";
 import ProductCard from "./components/ProductCard/ProductCard";
 import ProductList from "./components/ProductList/ProductList";
 import styles from "./App.module.css";
+import Carousel from "./components/Carousel/Carousel";
 
 
 // TIPADOS DE DATOS
@@ -20,7 +21,6 @@ type Response = {
     posts: Post[];
   };
 };
-
 
 //LISTADOS DE EJEMPLOS SEPARADOS POR TITULO
 const electronicosPopulares: Response = {
@@ -304,6 +304,7 @@ function App() {
             </ProductList>
           )
         })}
+        <Carousel/>
       </div>
     </>
   );
