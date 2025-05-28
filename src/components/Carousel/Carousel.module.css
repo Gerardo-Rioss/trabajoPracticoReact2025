@@ -1,8 +1,11 @@
 .carouselContainer {
-  width: 90%;
+  width: 85%;
+  
   margin: auto;
   padding: 2rem 0;
   position: relative;
+  background-color:#f6ce0a ;
+  border-radius: 20px;
 }
 
 .title {
