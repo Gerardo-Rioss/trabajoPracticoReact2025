@@ -3,6 +3,8 @@ import ProductCard from "./components/ProductCard/ProductCard";
 import ProductList from "./components/ProductList/ProductList";
 import styles from "./App.module.css";
 
+
+// TIPADOS DE DATOS
 type Post = {
   id: number;
   name: string;
@@ -19,6 +21,8 @@ type Response = {
   };
 };
 
+
+//LISTADOS DE EJEMPLOS SEPARADOS POR TITULO
 const electronicosPopulares: Response = {
   mostViews: {
     titleProductList: "Electrónicos más buscados",
@@ -269,66 +273,37 @@ const destacadosMes: Response = {
   }
 };
 
-
-
+// UNIDOS TODOS LOS LISTADOS EN UN SOLO ARREGLO PARA PODER RECORRERLOS PARA OBTENER UN CODIGO MAS LIMPIO
+const fullList : Response[]=[
+  electronicosPopulares,
+  hogarCocina,
+  deporteAireLibre,
+  destacadosMes
+]
 
 function App() {
   return (
     <>
       <div className={styles.container}>
         <NavBar />
-        <ProductList title={electronicosPopulares.mostViews.titleProductList}>
-          {electronicosPopulares.mostViews.posts.map((post)=>{
-            return(
-            <ProductCard 
-            id={post.id} 
-            name={post.name} 
-            description={post.description} 
-            price={post.price} 
-            image={post.image} 
-            />
-            )
-          })}
-        </ProductList>
-        <ProductList title={hogarCocina.mostViews.titleProductList}>
-          {hogarCocina.mostViews.posts.map((post)=>{
-            return(
-            <ProductCard 
-            id={post.id} 
-            name={post.name} 
-            description={post.description} 
-            price={post.price} 
-            image={post.image} 
-            />
-            )
-          })}
-        </ProductList>
-        <ProductList title={deporteAireLibre.mostViews.titleProductList}>
-          {deporteAireLibre.mostViews.posts.map((post)=>{
-            return(
-            <ProductCard 
-            id={post.id} 
-            name={post.name} 
-            description={post.description} 
-            price={post.price} 
-            image={post.image} 
-            />
-            )
-          })}
-        </ProductList>
-        <ProductList title={destacadosMes.mostViews.titleProductList}>
-          {destacadosMes.mostViews.posts.map((post)=>{
-            return(
-            <ProductCard 
-            id={post.id} 
-            name={post.name} 
-            description={post.description} 
-            price={post.price} 
-            image={post.image} 
-            />
-            )
-          })}
-        </ProductList>
+        {fullList.map(({mostViews},index)=>{
+          return(
+            <ProductList key={index} title={mostViews.titleProductList}>
+              {mostViews.posts.map((post)=>{
+                return(
+                  <ProductCard 
+                  key={post.id}
+                  id={post.id}
+                  name={post.name}
+                  description={post.description}
+                  price={post.price}
+                  image={post.image}
+                  />
+                )
+              })}
+            </ProductList>
+          )
+        })}
       </div>
     </>
   );
