@@ -17,7 +17,7 @@ function ProductCard(props: ProductCardProps) {
       <div className={style.cardContent}>
         <div className={style.cardHeader}>
           <span className={style.id}>id:{id}</span>
-          <h3 className={style.name}>{name}</h3>
+          <p className={style.name}>{name}</p>
           <p className={style.price}>${price.toFixed(2)}</p>
           <p className={style.description}>{description}</p>
         </div>

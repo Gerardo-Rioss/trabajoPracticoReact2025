@@ -10,13 +10,15 @@
 }
 .title {
   margin: 0;
-  height: 50px;
+  margin-right: 50px;
+  height: 100%;
   border-radius: 20px;
-  padding: 15px 0 0 50px;
-  font-size: 26px;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding: 10px 0 10px 50px;
+  font-size: 20px;
+  font-family: Proxima Nova,-apple-system,Helvetica Neue,helvetica,roboto,arial,sans-serif;
   text-align: left;
-  color: white;
+  
+  color:whitesmoke;
   box-shadow:10px 10px 5px 0px rgba(0,0,0,0.20) ;
   text-shadow:  1px 1px 2px rgba(0,0,0,1);
   background: #2A7B9B;
@@ -27,5 +29,5 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 3px;
 }
