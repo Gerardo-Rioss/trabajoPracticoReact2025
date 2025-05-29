@@ -21,7 +21,8 @@ function ProductCard(props: ProductCardProps) {
           <p className={style.price}>${price.toFixed(2)}</p>
           <p className={style.description}>{description}</p>
         </div>
-        <button className={style.button}>Comprar</button>
+        <button className={style.buttonCompra}>Comprar ahora</button>
+        <button className={style.buttonCarrito}>Agregar carrito</button>
       </div>
     </div>
   );

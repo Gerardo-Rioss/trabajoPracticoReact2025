@@ -76,9 +76,19 @@
   align-self: center;
 }
 
-.button {
+.buttonCompra {
   background-color: #3483fa;
   color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: center;
+  margin: 5px;
+}
+.buttonCarrito {
+  background-color: #cae0fd;
+  color: #0066ff;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 4px;
