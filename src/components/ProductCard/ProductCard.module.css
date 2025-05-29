@@ -75,7 +75,10 @@
   font-weight: bold;
   align-self: center;
 }
-
+.buttonContainer{
+  display: flex;
+  flex-direction: column;
+}
 .buttonCompra {
   background-color: #3483fa;
   color: white;
