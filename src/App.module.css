@@ -5,8 +5,12 @@
   height: 100%;
 background-color: #ebebeb   ;
 display: grid;
-grid-template-columns: 20% 80%;
+grid-template-columns: 5% 95%;
 grid-template-rows: repeat(3,fr1) ;
+grid-template-areas:
+    "header header"
+    "sideNav mainContent"
+    "footer footer";
 }
 
 body {
@@ -16,10 +20,14 @@ body {
 }
 
 .header{
-  grid-area: 1/2;
+  grid-area: header;
 }
 .mainContent{
-  grid-area: 1/2;
+  grid-area: mainContent;
 }
-.sideNav{}
-.footer{}
+.sideNav{
+  grid-area: sideNav;
+}
+.footer{
+  grid-area: footer;
+}

@@ -1,7 +1,7 @@
-import { NavBar } from "./components/NavBar/NavBar";
 import ProductCard from "./components/ProductCard/ProductCard";
 import ProductList from "./components/ProductList/ProductList";
 import styles from "./App.module.css";
+import { NavHeader } from "./components/Header/NavHeader/NavHeader";
 // TIPADOS DE DATOS
 type Post = {
   id: number;
@@ -316,7 +316,7 @@ function App() {
     <>
       <div className={styles.appContainer}>
         <div className={styles.header}>
-          <NavBar />
+          <NavHeader />
         </div>
         <div className={styles.mainContent}>
           {fullList.map(({ mostViews }, index) => {
