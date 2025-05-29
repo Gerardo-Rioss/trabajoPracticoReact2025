@@ -284,7 +284,7 @@ const fullList : Response[]=[
 function App() {
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.appContainer}>
         <NavBar />
         {fullList.map(({mostViews},index)=>{
           return(

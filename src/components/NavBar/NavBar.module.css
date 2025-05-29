@@ -1,11 +1,4 @@
 .navHeader {
-    display: flex;
-    justify-content: center;
-    background-color: #ffe600;
-    font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto,
-        Arial, sans-serif;
-}
-.navContainer {
     display: grid;
     grid-template-areas:
         "nav-left-top nav-center-top nav-right-top"
@@ -13,8 +6,13 @@
     grid-template-columns: 162px minmax(340px, 588px) minmax(350px, 390px);
     grid-template-rows: 40px 28px;
     grid-column-gap: 20px;
+    justify-content: center;
+    
     padding: 8px 10px 12px 10px;
     grid-row-gap: 12px;
+    background-color: #ffe600;
+    font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto,
+        Arial, sans-serif;
 }
 
 /* nav Left Top Area */

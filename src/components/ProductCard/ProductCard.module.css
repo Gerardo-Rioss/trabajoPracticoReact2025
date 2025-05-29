@@ -11,6 +11,7 @@
   cursor: pointer;
   background-color: #f5efed;
   font-family: Proxima Nova,-apple-system,Helvetica Neue,helvetica,roboto,arial,sans-serif;
+  
 }
 .imageContainer {
   position: relative;
@@ -78,6 +79,7 @@
 .buttonContainer{
   display: flex;
   flex-direction: column;
+  gap: 5px;
 }
 .buttonCompra {
   background-color: #3483fa;
@@ -86,8 +88,8 @@
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
-  align-self: center;
-  margin: 5px;
+  
+  
 }
 .buttonCarrito {
   background-color: #cae0fd;
@@ -96,5 +98,4 @@
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
-  align-self: center;
 }
