@@ -10,7 +10,7 @@ type ProductCardProps = {
 function ProductCard(props: ProductCardProps) {
   const { id, name, price, description, image } = props;
   return (
-    <div className={styles.card}>
+    <div className={styles.cardContainer}>
       <div className={styles.imageContainer}>
         <img src={image} alt={name} className={styles.image} />
       </div>
@@ -24,7 +24,6 @@ function ProductCard(props: ProductCardProps) {
         <div className={styles.buttonContainer}>
         <button className={styles.buttonCompra}>Comprar ahora</button>
         <button className={styles.buttonCarrito}>Agregar carrito</button>
-
         </div>
       </div>
     </div>

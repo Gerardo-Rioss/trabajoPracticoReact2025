@@ -337,9 +337,14 @@ function App() {
               </ProductList>
             );
           })}
+          
         </div>
         <div className={styles.sideNav}></div>
-        <div className={styles.footer}></div>
+        <div className={styles.footer}>
+          <div className={styles.text}>
+          <h3>Trabajo Práctico - Rios Gerardo</h3></div>
+          </div>
+          
       </div>
     </>
   );

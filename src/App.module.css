@@ -5,8 +5,9 @@
   height: 100%;
 background-color: #ebebeb   ;
 display: grid;
-grid-template-columns: 5% 95%;
+grid-template-columns: 10% 90%;
 grid-template-rows: repeat(3,fr1) ;
+gap: 0;
 grid-template-areas:
     "header header"
     "sideNav mainContent"
@@ -27,7 +28,19 @@ body {
 }
 .sideNav{
   grid-area: sideNav;
+  background-color: #ced4da;
+  
 }
 .footer{
   grid-area: footer;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2,1fr);
+  background-color:#023047 ;
+  font-family: Roboto,sans-serif;
+  color: #e8eaed;
+}
+
+.text{
+  border: 1px solid white;
 }
