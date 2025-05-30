@@ -28,19 +28,8 @@ body {
 }
 .sideNav{
   grid-area: sideNav;
-  background-color: #ced4da;
-  
 }
 .footer{
   grid-area: footer;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2,1fr);
-  background-color:#023047 ;
-  font-family: Roboto,sans-serif;
-  color: #e8eaed;
 }
 
-.text{
-  border: 1px solid white;
-}

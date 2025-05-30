@@ -2,6 +2,9 @@ import ProductCard from "./components/ProductCard/ProductCard";
 import ProductList from "./components/ProductList/ProductList";
 import styles from "./App.module.css";
 import { NavHeader } from "./components/Header/NavHeader/NavHeader";
+import { FooterContent } from "./components/Footer/FooterContent";
+import SideNavContent from "./components/SideBar/SideNavContent";
+
 // TIPADOS DE DATOS
 type Post = {
   id: number;
@@ -339,10 +342,11 @@ function App() {
           })}
           
         </div>
-        <div className={styles.sideNav}></div>
+        <div className={styles.sideNav}>
+          <SideNavContent/>
+        </div>
         <div className={styles.footer}>
-          <div className={styles.text}>
-          <h3>Trabajo Práctico - Rios Gerardo</h3></div>
+              <FooterContent/>
           </div>
           
       </div>

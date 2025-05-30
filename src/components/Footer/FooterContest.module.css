@@ -1,0 +1,14 @@
+.footerContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  background-color: #00192a;
+  font-family: Roboto, sans-serif;
+  color: #e8eaed;
+}
+.footerContent{
+  grid-column: 2/4;
+  grid-row: 2/2;
+  border-top: 1px solid white;
+  text-align: center;
+}
