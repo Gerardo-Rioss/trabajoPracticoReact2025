@@ -2,7 +2,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  background-color: #00192a;
+  background-color: #0b141a;
+  
   font-family: Roboto, sans-serif;
   color: #e8eaed;
 }
