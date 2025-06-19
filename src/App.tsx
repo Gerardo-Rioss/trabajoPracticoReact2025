@@ -5,18 +5,20 @@ import SideNavContent from "./components/SideBar/SideNavContent";
 import MainContent from "./components/Main/MainContent";
 import { useEffect, useState } from "react";
 /* import { FaEtsy } from "react-icons/fa"; */
+
 type Post = {
   id: number;
   title: string;
   image: string;
 };
+
 const API = "https://jsonplaceholder.typicode.com/posts";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
   const [posts, setPosts] = useState<Post[] | null>(null);
 
-  /* useEffect(() => {
+  useEffect(() => {
     fetch(API, { method: "GET" })
       .then((res) => res.json())
       .then((data) => {
@@ -33,34 +35,13 @@ function App() {
       .catch(() => setError("Ocurrio un error obteniendo los datos"))
       .finally(() => setIsLoading(false));
   }, []);
+
   if (isLoading) {
     return "loading";
   }
   if (error) {
     return error;
   }
- */
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(API, { method: "GET" });
-        const data = await response.json();
-        setPosts(
-          data.map((item) => ({
-            ...item,
-            image:
-              "https://png.pngtree.com/background/20250124/original/pngtree-beautiful-natural-scenery-picture-image_15750499.jpg",
-          }))
-        );
-      } catch (error) {
-        setError("Ocurrio un error obteniendo los datos");
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchData()
-  },[]);
 
   return (
     <>
