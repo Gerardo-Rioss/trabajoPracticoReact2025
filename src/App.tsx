@@ -1,7 +1,6 @@
 import styles from "./App.module.css";
 import { NavHeader } from "./components/Header/headerContent/headerContent";
 import { FooterContent } from "./components/Footer/FooterContent";
-import SideNavContent from "./components/SideBar/SideNavContent";
 import  MainContent from "./components/Main/MainContent";
 
 // TIPADOS DE DATOS
@@ -17,20 +16,18 @@ type ProductList = {
     decription?: string;
     products: Product[];
   };
+  
 
 function App() {
   return (
     <>
       <div className={styles.appContainer}>
         <div className={styles.header}>
-          <NavHeader />
+          <NavHeader total={100} />
         </div>
         <div className={styles.mainContent}>
           <MainContent productLists={fullList} />
         </div>
-        {/* <div className={styles.sideNav}>
-          <SideNavContent/>
-        </div> */}
         <div className={styles.footer}>
               <FooterContent/>
           </div>

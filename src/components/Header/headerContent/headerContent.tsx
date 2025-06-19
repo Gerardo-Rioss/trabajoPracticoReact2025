@@ -2,7 +2,13 @@ import SearchBar from "../SearchBar/SearchBar";
 import NavMenu from "../NavMenu/NavMenu";
 import styles from "./headerContent.module.css";
 import NavFilter from "../NavFilter/NavFilter";
-export const NavHeader = () => {
+
+type NavHeaderProps={
+  total : number,
+}
+
+export const NavHeader = (props: NavHeaderProps) => {
+  const {total}=props
   return (
     <nav className={styles.navHeader}>
       <div className={styles.navLeftTopArea}>
@@ -16,7 +22,7 @@ export const NavHeader = () => {
         <SearchBar />
       </div>
       <div className={styles.navRigthBottomArea}>
-        <NavMenu />
+        <NavMenu total={total}/>
       </div>
       <div className={styles.navCenterBottomArea}>
         <NavFilter/>
