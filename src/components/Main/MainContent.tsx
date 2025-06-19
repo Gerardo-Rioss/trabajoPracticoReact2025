@@ -1,34 +1,44 @@
 import ProductList from "../ProductList/ProductList";
 import ProductCard from "../ProductCard/ProductCard";
+
 type Post = {
   id: number;
-  title: string;
+  name: string;
+  description: string;
+  price: number;
   image: string;
 };
-type MainContentProps = {
-  posts: Post[] | null;
+type ProductList = {
+  title: string;
+  decription?: string;
+  posts: Post[];
 };
 
-export default function MainContent({ posts }: MainContentProps) {
+type List = {
+  lists: ProductList[];
+};
+
+export default function MainContent({ lists }: List) {
   return (
     <>
-      <ProductList title={"Randon"}>
-        {posts?.map((post) => {
-          return (
-            <ProductCard
-              key={post.id}
-              id={post.id}
-              title={post.title}
-              image={post.image}
-              /* name={post.name}
+      {lists.map((list, index) => {
+        return (
+          <ProductList key={index} title={list.title}>
+            {list.posts.map((post) => {
+              return (
+                <ProductCard
+                  key={post.id}
+                  id={post.id}
+                  name={post.name}
                   description={post.description}
                   price={post.price}
-                  image={post.image} */
-            />
-          );
-        })}
-      </ProductList>
-      
+                  image={post.image}
+                />
+              );
+            })}
+          </ProductList>
+        );
+      })}
     </>
   );
 }

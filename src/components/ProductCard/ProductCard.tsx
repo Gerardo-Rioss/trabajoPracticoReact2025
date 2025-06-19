@@ -1,17 +1,14 @@
 import styles from "./ProductCard.module.css";
 type ProductCardProps = {
   id: number;
-  title: string,
-  name?: string;
-  price?: number;
-  description?: string;
-  image?: string;
-}; 
-
-
+  name: string;
+  price: number;
+  description: string;
+  image: string;
+};
 
 function ProductCard(props: ProductCardProps) {
-  const { id, name, price, description, image, title } = props;
+  const { id, name, price, description, image } = props;
   return (
     <div className={styles.cardContainer}>
       <div className={styles.imageContainer}>
@@ -20,9 +17,8 @@ function ProductCard(props: ProductCardProps) {
       <div className={styles.cardContent}>
         <div className={styles.cardHeader}>
           <span className={styles.id}>id:{id}</span>
-          <p>{title}</p>
           <p className={styles.name}>{name}</p>
-          {price!== undefined && <p className={styles.price}>${price.toFixed(2)}</p>}
+          <p className={styles.price}>${price.toFixed(2)}</p>
           <p className={styles.description}>{description}</p>
         </div>
         <div className={styles.buttonContainer}>
