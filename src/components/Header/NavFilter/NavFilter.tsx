@@ -2,8 +2,9 @@ import styles from './NavFilter.module.css'
 export const NavFilter = () => {
   return (
     <div className={styles.links}>
-      <a href="">Categorías</a>
-      <a href="">Ofertas</a>
+      <a href="">Todos</a>
+      <a href="">Categoria1</a>
+      <a href="">Categoria2</a>
     </div>
   );
 };

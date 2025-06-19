@@ -1,11 +1,11 @@
 import styles from "./App.module.css";
-import { NavHeader } from "./components/Header/NavHeader/NavHeader";
+import { NavHeader } from "./components/Header/headerContent/headerContent";
 import { FooterContent } from "./components/Footer/FooterContent";
 import SideNavContent from "./components/SideBar/SideNavContent";
 import  MainContent from "./components/Main/MainContent";
 
 // TIPADOS DE DATOS
-type Post = {
+type Product = {
   id: number;
   name: string;
   description: string;
@@ -15,7 +15,7 @@ type Post = {
 type ProductList = {
     title: string;
     decription?: string;
-    posts: Post[];
+    products: Product[];
   };
 
 function App() {
@@ -26,11 +26,11 @@ function App() {
           <NavHeader />
         </div>
         <div className={styles.mainContent}>
-          <MainContent lists={fullList} />
+          <MainContent productLists={fullList} />
         </div>
-        <div className={styles.sideNav}>
+        {/* <div className={styles.sideNav}>
           <SideNavContent/>
-        </div>
+        </div> */}
         <div className={styles.footer}>
               <FooterContent/>
           </div>
@@ -49,7 +49,7 @@ export default App;
 //LISTADOS DE EJEMPLOS SEPARADOS POR TITULO
 const electronicosPopulares: ProductList = {
   title: "Electrónicos más buscados",
-  posts: [
+  products: [
     {
       id: 101,
       name: "Smartphone Samsung Galaxy S23",
@@ -123,7 +123,7 @@ const electronicosPopulares: ProductList = {
 
 const hogarCocina: ProductList = {
   title: "Productos para el hogar",
-  posts: [
+  products: [
     {
       id: 201,
       name: "Robot aspirador Xiaomi Mi Robot",
@@ -197,7 +197,7 @@ const hogarCocina: ProductList = {
 
 const deporteAireLibre: ProductList = {
   title: "Equipamiento deportivo",
-  posts: [
+  products: [
     {
       id: 301,
       name: "Bicicleta montaña Trek Marlin 5",
@@ -268,7 +268,7 @@ const deporteAireLibre: ProductList = {
 };
 const destacadosMes: ProductList = {
   title: "Productos Destacados del Mes",
-  posts: [
+  products: [
     {
       id: 701,
       name: "Cámara Sony Alpha A7 IV",

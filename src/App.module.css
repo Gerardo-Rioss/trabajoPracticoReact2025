@@ -10,7 +10,7 @@ grid-template-rows: repeat(3,fr1) ;
 gap: 0;
 grid-template-areas:
     "header header"
-    "sideNav mainContent"
+    "mainContent mainContent"
     "footer footer";
 }
 
@@ -26,9 +26,7 @@ body {
 .mainContent{
   grid-area: mainContent;
 }
-.sideNav{
-  grid-area: sideNav;
-}
+
 .footer{
   grid-area: footer;
 }

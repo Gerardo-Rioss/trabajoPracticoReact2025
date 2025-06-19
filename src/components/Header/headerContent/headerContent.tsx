@@ -1,6 +1,6 @@
 import SearchBar from "../SearchBar/SearchBar";
 import NavMenu from "../NavMenu/NavMenu";
-import styles from "./NavHeader.module.css";
+import styles from "./headerContent.module.css";
 import NavFilter from "../NavFilter/NavFilter";
 export const NavHeader = () => {
   return (

@@ -7,7 +7,6 @@
     grid-template-rows: 40px 28px;
     grid-column-gap: 20px;
     justify-content: center;
-    
     padding: 8px 10px 12px 10px;
     grid-row-gap: 12px;
     background-color: #ffe600;
@@ -34,7 +33,6 @@
 .navRigthBottomArea {
     grid-area: nav-right-bottom;
 }
-
 
 /* nav Center Bottom Area */
 .navCenterBottomArea{
