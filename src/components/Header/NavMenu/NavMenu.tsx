@@ -5,8 +5,8 @@ type NavMenuProps={
 export const NavMenu = (props:NavMenuProps) => {
   const {total} = props
   return (
-    <div className={styles.links}>
-      <a href="">🛒 Total: <strong>${total}</strong> </a>
+    <div className={styles.total}>
+    🛒  Total: ${total.toFixed(2)}
     </div>
   );
 }

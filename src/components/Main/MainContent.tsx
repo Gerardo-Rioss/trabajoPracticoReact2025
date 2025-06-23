@@ -1,5 +1,6 @@
 import ProductList from "../ProductList/ProductList";
 import ProductCard from "../ProductCard/ProductCard";
+import styles from "../Main/MainContent.module.css"
 
 type Product = {
   id: number;
@@ -26,7 +27,10 @@ export default function MainContent(props: MainContentProps) {
   return (
     <>
       {lists.length===0?(
-        <h2>No se encontraron Productos.</h2>
+        <div className={styles.mensaje}>
+            <h2>No se encontraron Productos.</h2>
+        </div>
+        
       ):(lists.map((listsItem, index) => {
         return (
           <ProductList key={index} title={listsItem.title}>
