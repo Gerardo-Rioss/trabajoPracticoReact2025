@@ -1,17 +1,25 @@
 .appContainer {
-  padding: 0;
-  margin:0 ;
-  width: 100%;
-  height: 100%;
-background-color: #ebebeb   ;
-display: grid;
-grid-template-columns: 10% 90%;
-grid-template-rows: repeat(3,fr1) ;
-gap: 0;
-grid-template-areas:
-    "header header"
-    "mainContent mainContent"
-    "footer footer";
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 2rem;
+}
+
+.footer {
+  background-color: #343a40;
+  color: white;
+  padding: 1rem;
+  text-align: center;
 }
 
 body {

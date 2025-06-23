@@ -14,28 +14,36 @@ type ProductList = {
   products: Product[];
 };
 
-type List = {
-  productLists: ProductList[];
-};
 
-export default function MainContent({ productLists }: List) {
+
+type MainContentProps={
+  lists: ProductList[];
+  isInCart : (id:number)=>boolean;
+  add: (p:Product)=>void;
+  remove:(id:number)=>void;
+}
+
+
+export default function MainContent(props: MainContentProps) {
+  const {lists,isInCart,add,remove}=props
   return (
     <>
-      {productLists.map((productList, index) => {
+      {lists.map((listsItem, index) => {
         return (
-          <ProductList key={index} title={productList.title}>
-            {productList.products.map((product) => {
-              return (
-                <ProductCard
-                  key={product.id}
-                  id={product.id}
-                  name={product.name}
-                  description={product.description}
-                  price={product.price}
-                  image={product.image}
-                />
-              );
-            })}
+          <ProductList key={index} title={listsItem.title}>
+            {listsItem.products.map((product) => (
+              <ProductCard
+                key={product.id}
+                id={product.id}
+                name={product.name}
+                description={product.description}
+                price={product.price}
+                image={product.image}
+                inCart={isInCart(product.id)}
+                onAdd={() => add(product)}
+                onRemove={() => remove(product.id)}
+              />
+            ))}
           </ProductList>
         );
       })}

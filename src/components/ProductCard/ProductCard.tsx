@@ -5,10 +5,14 @@ type ProductCardProps = {
   price: number;
   description: string;
   image: string;
+  inCart: boolean;
+  onAdd: () => void;
+  onRemove: () => void;
 };
 
 function ProductCard(props: ProductCardProps) {
-  const { id, name, price, description, image } = props;
+  const { id, name, price, description, image, inCart, onAdd, onRemove } =
+    props;
   return (
     <div className={styles.cardContainer}>
       <div className={styles.imageContainer}>
@@ -22,8 +26,15 @@ function ProductCard(props: ProductCardProps) {
           <p className={styles.description}>{description}</p>
         </div>
         <div className={styles.buttonContainer}>
-        <button className={styles.buttonCompra}>Comprar ahora</button>
-        <button className={styles.buttonCarrito}>Agregar carrito</button>
+          {!inCart ? (
+            <button onClick={onAdd} className={styles.buttonCompra}>
+              Agregar Carrito
+            </button>
+          ) : (
+            <button onClick={onRemove} className={styles.buttonCarrito}>
+              Quitar carrito
+            </button>
+          )}
         </div>
       </div>
     </div>

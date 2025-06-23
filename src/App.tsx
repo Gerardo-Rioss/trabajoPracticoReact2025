@@ -2,6 +2,7 @@ import styles from "./App.module.css";
 import { NavHeader } from "./components/Header/headerContent/headerContent";
 import { FooterContent } from "./components/Footer/FooterContent";
 import MainContent from "./components/Main/MainContent";
+import { useState } from "react";
 
 // TIPADOS DE DATOS
 type Product = {
@@ -18,14 +19,31 @@ type ProductList = {
 };
 
 function App() {
+  const [cart, setCart]= useState<Product[]>([])
+
+  const isInCart = (id:number)=>{
+    return cart.some((p)=>p.id===id);
+  }
+
+  const addToCart = (p: Product)=>{
+    if (!isInCart(p.id)){ 
+      setCart([...cart, p]);
+    }
+  }
+
+  const removeFromCart=(id:number)=>{
+    setCart(cart.filter((p)=>p.id !==id))
+  }
+
+  const total = cart.reduce((sum,p)=>sum + p.price,0)
   return (
     <>
       <div className={styles.appContainer}>
         <div className={styles.header}>
-          <NavHeader total={100} />
+          <NavHeader total={total} />
         </div>
         <div className={styles.mainContent}>
-          <MainContent productLists={fullList} />
+          <MainContent lists={fullList} isInCart={isInCart} add={addToCart} remove={removeFromCart} />
         </div>
         <div className={styles.footer}>
           <FooterContent />
