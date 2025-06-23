@@ -14,21 +14,20 @@ type ProductList = {
   products: Product[];
 };
 
-
-
-type MainContentProps={
+type MainContentProps = {
   lists: ProductList[];
-  isInCart : (id:number)=>boolean;
-  add: (p:Product)=>void;
-  remove:(id:number)=>void;
-}
-
+  isInCart: (id: number) => boolean;
+  add: (p: Product) => void;
+  remove: (id: number) => void;
+};
 
 export default function MainContent(props: MainContentProps) {
-  const {lists,isInCart,add,remove}=props
+  const { lists, isInCart, add, remove } = props;
   return (
     <>
-      {lists.map((listsItem, index) => {
+      {lists.length===0?(
+        <h2>No se encontraron Productos.</h2>
+      ):(lists.map((listsItem, index) => {
         return (
           <ProductList key={index} title={listsItem.title}>
             {listsItem.products.map((product) => (
@@ -46,7 +45,8 @@ export default function MainContent(props: MainContentProps) {
             ))}
           </ProductList>
         );
-      })}
+      }))
+      }
     </>
   );
 }

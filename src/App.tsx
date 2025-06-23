@@ -19,31 +19,50 @@ type ProductList = {
 };
 
 function App() {
+  //Estado para el carrito
   const [cart, setCart]= useState<Product[]>([])
 
+  // Verificar si el producto ya esta en el carrito
   const isInCart = (id:number)=>{
     return cart.some((p)=>p.id===id);
   }
 
+  //agregar producto al carrito
   const addToCart = (p: Product)=>{
     if (!isInCart(p.id)){ 
       setCart([...cart, p]);
     }
   }
 
+  //Remover producto del carrito
   const removeFromCart=(id:number)=>{
     setCart(cart.filter((p)=>p.id !==id))
   }
 
+  // sumar el precio de todos los productos agregados en el carrito
   const total = cart.reduce((sum,p)=>sum + p.price,0)
+
+  //Estado del buscador
+  const [search, setSearch] = useState("");
+
+  //Filrar listado por la busqueda
+  console.log(fullList)
+  const filteredList = fullList.map((list)=>({
+    ...list,
+    products: list.products.filter((product)=>
+      product.name.toLowerCase().includes(search.toLowerCase())
+    ),
+  })).filter((list)=>list.products.length>0);
+  
+
   return (
     <>
       <div className={styles.appContainer}>
         <div className={styles.header}>
-          <NavHeader total={total} />
+          <NavHeader total={total} setSearch={setSearch} search={search} />
         </div>
         <div className={styles.mainContent}>
-          <MainContent lists={fullList} isInCart={isInCart} add={addToCart} remove={removeFromCart} />
+          <MainContent lists={filteredList} isInCart={isInCart} add={addToCart} remove={removeFromCart} />
         </div>
         <div className={styles.footer}>
           <FooterContent />
@@ -53,6 +72,16 @@ function App() {
   );
 }
 export default App;
+
+
+
+
+
+
+
+
+
+
 
 ///////////////////////////////////   LISTADOS DE PRODUCTOS PARA UTILIZAR AL INSTANCIAR LOS COMPONENTES   ///////////////////////////////////////
 //LISTADOS DE EJEMPLOS SEPARADOS POR TITULO

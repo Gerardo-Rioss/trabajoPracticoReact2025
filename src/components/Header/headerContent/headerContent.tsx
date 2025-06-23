@@ -5,10 +5,12 @@ import NavFilter from "../NavFilter/NavFilter";
 
 type NavHeaderProps={
   total : number,
+  setSearch: (searchValue:string)=>void,
+  search: string,
 }
 
 export const NavHeader = (props: NavHeaderProps) => {
-  const {total}=props
+  const {total, setSearch, search}=props
   return (
     <nav className={styles.navHeader}>
       <div className={styles.navLeftTopArea}>
@@ -19,7 +21,7 @@ export const NavHeader = (props: NavHeaderProps) => {
         />
       </div>
       <div className={styles.navCenterTopArea}>
-        <SearchBar />
+        <SearchBar setSearch={setSearch} search={search}/>
       </div>
       <div className={styles.navRigthBottomArea}>
         <NavMenu total={total}/>
