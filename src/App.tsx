@@ -1,7 +1,7 @@
 import styles from "./App.module.css";
 import { NavHeader } from "./components/Header/headerContent/headerContent";
 import { FooterContent } from "./components/Footer/FooterContent";
-import  MainContent from "./components/Main/MainContent";
+import MainContent from "./components/Main/MainContent";
 
 // TIPADOS DE DATOS
 type Product = {
@@ -12,11 +12,10 @@ type Product = {
   image: string;
 };
 type ProductList = {
-    title: string;
-    decription?: string;
-    products: Product[];
-  };
-  
+  title: string;
+  decription?: string;
+  products: Product[];
+};
 
 function App() {
   return (
@@ -29,18 +28,13 @@ function App() {
           <MainContent productLists={fullList} />
         </div>
         <div className={styles.footer}>
-              <FooterContent/>
-          </div>
-          
+          <FooterContent />
+        </div>
       </div>
     </>
   );
 }
 export default App;
-
-
-
-
 
 ///////////////////////////////////   LISTADOS DE PRODUCTOS PARA UTILIZAR AL INSTANCIAR LOS COMPONENTES   ///////////////////////////////////////
 //LISTADOS DE EJEMPLOS SEPARADOS POR TITULO
@@ -104,8 +98,7 @@ const electronicosPopulares: ProductList = {
       name: "Monitor LG UltraWide",
       description: "Monitor 34 pulgadas 1440p curvado",
       price: 499,
-      image:
-        "https://http2.mlstatic.com/D_685318-MLA54921513210_042023-O.jpg",
+      image: "https://http2.mlstatic.com/D_685318-MLA54921513210_042023-O.jpg",
     },
     {
       id: 108,
@@ -141,8 +134,7 @@ const hogarCocina: ProductList = {
     {
       id: 203,
       name: "Olla instantánea Duo Crisp",
-      description:
-        "Olla a presión eléctrica 8 en 1 con función de aire frito",
+      description: "Olla a presión eléctrica 8 en 1 con función de aire frito",
       price: 159,
       image:
         "https://http2.mlstatic.com/D_NQ_NP_600515-MLA84033144575_042025-O.webp",
@@ -218,8 +210,7 @@ const deporteAireLibre: ProductList = {
       name: "Tienda de campaña Coleman",
       description: "Tienda para 4 personas, impermeable, fácil de armar",
       price: 149,
-      image:
-        "https://m.media-amazon.com/images/I/51N9HzKaKhL._AC_SL1347_.jpg",
+      image: "https://m.media-amazon.com/images/I/51N9HzKaKhL._AC_SL1347_.jpg",
     },
     {
       id: 304,
@@ -232,8 +223,7 @@ const deporteAireLibre: ProductList = {
     {
       id: 305,
       name: "Reloj deportivo Garmin Forerunner",
-      description:
-        "Reloj GPS para running con monitor de frecuencia cardíaca",
+      description: "Reloj GPS para running con monitor de frecuencia cardíaca",
       price: 249,
       image: "https://garmin.com.ar/Image/0/750_750-1161.jpg",
     },
@@ -326,8 +316,8 @@ const destacadosMes: ProductList = {
 };
 // UNIDOS TODOS LOS LISTADOS EN UN SOLO ARREGLO PARA PODER RECORRERLOS PARA OBTENER UN CODIGO MAS LIMPIO
 const fullList: ProductList[] = [
-electronicosPopulares,
-hogarCocina,
-deporteAireLibre,
-destacadosMes,
+  electronicosPopulares,
+  hogarCocina,
+  deporteAireLibre,
+  destacadosMes,
 ];
