@@ -15,7 +15,7 @@ type NavHeaderProps={
 }
 
 export const NavHeader = (props: NavHeaderProps) => {
-  const {total, setSearch, search, selectedCategory, priceFilter,setSelectedCategory,setPriceFilter}=props
+  const {total, setSearch, search, selectedCategory, priceFilter,setSelectedCategory,setPriceFilter, categories}=props
   return (
     <nav className={styles.navHeader}>
       <div className={styles.navLeftTopArea}>
