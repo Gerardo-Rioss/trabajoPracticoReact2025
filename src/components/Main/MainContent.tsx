@@ -8,6 +8,7 @@ type Product = {
   description: string;
   price: number;
   image: string;
+  category:string,
 };
 type ProductList = {
   title: string;
@@ -42,6 +43,7 @@ export default function MainContent(props: MainContentProps) {
                 description={product.description}
                 price={product.price}
                 image={product.image}
+                category={product.category}
                 inCart={isInCart(product.id)}
                 onAdd={() => add(product)}
                 onRemove={() => remove(product.id)}

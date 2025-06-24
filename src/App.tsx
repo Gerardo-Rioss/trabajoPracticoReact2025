@@ -3,6 +3,7 @@ import { NavHeader } from "./components/Header/headerContent/headerContent";
 import { FooterContent } from "./components/Footer/FooterContent";
 import MainContent from "./components/Main/MainContent";
 import { useState } from "react";
+import SideBarContent from "./components/SideBar/SideBarContent";
 
 // TIPADOS DE DATOS
 type Product = {
@@ -53,6 +54,8 @@ function App() {
     'Accesorios',
     'Gaming'
   ];
+
+  
   // Verificar si el producto ya esta en el carrito
   const isInCart = (id: number) => {
     return cart.some((p) => p.id === id);
@@ -84,7 +87,7 @@ function App() {
           .includes(search.toLowerCase());
         //filtra por cageoria
         const filteredByCategory =
-          selectedCategory === "" || list.title === selectedCategory;
+          selectedCategory === "" || product.category === selectedCategory;
         //filtra segun radio buttom seleccionado en el rango de precio
         let filteredByPrice = true;
         if (priceFilter === "Menos de $500")
@@ -121,6 +124,9 @@ function App() {
             add={addToCart}
             remove={removeFromCart}
           />
+        </div>
+        <div className={styles.sideBar}>
+          <SideBarContent />
         </div>
         <div className={styles.footer}>
           <FooterContent />

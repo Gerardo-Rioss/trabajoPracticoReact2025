@@ -9,16 +9,17 @@ type NavFilterProps={
 
 export const NavFilter = (props: NavFilterProps) => {
   const {selectedCategory,setSelectedCategory,priceFilter,setPriceFilter,categories}= props
+  
   return (
     <div className={styles.container}>
       <div>
       <select name={selectedCategory} onChange={(e)=>setSelectedCategory(e.target.value)}>
+      
         <option value="">Todas las categrías</option>
         {categories.map((c)=>(
-          <option key={c}  value={c}>c</option>
+          <option key={c}  value={c}>{c}</option>
         ))}
       </select>
-
       </div>
       <div>
         <label htmlFor=""><input type="radio" name='price' value='' checked={priceFilter===""} onChange={()=>setPriceFilter("")}  />Todos</label>
