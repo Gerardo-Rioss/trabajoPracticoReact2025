@@ -21,7 +21,14 @@ type ProductList = {
 function App() {
   //Estado para el carrito
   const [cart, setCart]= useState<Product[]>([])
+  //Estado del buscador
+  const [search, setSearch] = useState("");
+  //Estado de las categorias
+  const [selectedCategory, setSelectedCategory]= useState("");
+  //estado de los filtros por precio
+  const [priceFilter, setPriceFilter]= useState("");
 
+  const categories= ['Categoria1','Categoria2']
   // Verificar si el producto ya esta en el carrito
   const isInCart = (id:number)=>{
     return cart.some((p)=>p.id===id);
@@ -41,16 +48,21 @@ function App() {
 
   // sumar el precio de todos los productos agregados en el carrito
   const total = cart.reduce((sum,p)=>sum + p.price,0)
+  console.log(cart)
 
-  //Estado del buscador
-  const [search, setSearch] = useState("");
 
   //Filrar listado por la busqueda
-  console.log(fullList)
   const filteredList = fullList.map((list)=>({
     ...list,
-    products: list.products.filter((product)=>
-      product.name.toLowerCase().includes(search.toLowerCase())
+    products: list.products.filter((product)=>{
+      const filteredByName=product.name.toLowerCase().includes(search.toLowerCase());
+      const filteredByCategory = selectedCategory === "" || list.title === selectedCategory;
+      let filteredByPrice = true;
+      if (priceFilter==="Menos de $500") filteredByPrice = product.price < 500;
+      else if (priceFilter ==="Mayor o igual a 500") filteredByPrice= product.price>=500 && product.price<=1000;
+      else if (priceFilter ==="Mayor a 1000") filteredByPrice= product.price>1000;
+      return filteredByName && filteredByCategory && filteredByPrice;
+    }
     ),
   })).filter((list)=>list.products.length>0);
   
@@ -59,7 +71,7 @@ function App() {
     <>
       <div className={styles.appContainer}>
         <div className={styles.header}>
-          <NavHeader total={total} setSearch={setSearch} search={search} />
+          <NavHeader total={total} setSearch={setSearch} search={search} categories={categories} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} priceFilter={priceFilter} setPriceFilter={setPriceFilter} />
         </div>
         <div className={styles.mainContent}>
           <MainContent lists={filteredList} isInCart={isInCart} add={addToCart} remove={removeFromCart} />

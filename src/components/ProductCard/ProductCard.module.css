@@ -82,7 +82,7 @@
   flex-direction: column;
   gap: 5px;
 }
-.buttonCompra {
+.buttonAdd {
   background-color: #3483fa;
   color: white;
   border: none;
@@ -92,7 +92,7 @@
   
   
 }
-.buttonCarrito {
+.buttonRemove {
   background-color: #cae0fd;
   color: #0066ff;
   border: none;

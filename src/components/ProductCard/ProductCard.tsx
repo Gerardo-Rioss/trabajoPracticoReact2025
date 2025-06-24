@@ -27,11 +27,11 @@ function ProductCard(props: ProductCardProps) {
         </div>
         <div className={styles.buttonContainer}>
           {!inCart ? (
-            <button onClick={onAdd} className={styles.buttonCompra}>
+            <button onClick={onAdd} className={styles.buttonAdd}>
               Agregar Carrito
             </button>
           ) : (
-            <button onClick={onRemove} className={styles.buttonCarrito}>
+            <button onClick={onRemove} className={styles.buttonRemove}>
               Quitar carrito
             </button>
           )}
