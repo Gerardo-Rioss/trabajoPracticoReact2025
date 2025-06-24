@@ -5,8 +5,9 @@ type NavMenuProps={
 export const NavMenu = (props:NavMenuProps) => {
   const {total} = props
   return (
-    <div className={styles.total}>
-    🛒  Total: ${total.toFixed(2)}
+    <div className={styles.container}>
+      <div>🛒</div>
+      <div className={styles.total}> Total: ${total.toFixed(2)}</div>
     </div>
   );
 }

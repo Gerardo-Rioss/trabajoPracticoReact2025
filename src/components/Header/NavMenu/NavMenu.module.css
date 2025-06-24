@@ -3,9 +3,15 @@
     margin: 0;
     line-height: 14px;
     border: none;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 400;
     display: flex;
     gap: 1rem;
     text-decoration: none;
+}
+.container{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
 }
