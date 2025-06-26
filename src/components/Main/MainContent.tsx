@@ -26,12 +26,11 @@ type MainContentProps = {
 export default function MainContent(props: MainContentProps) {
   const { lists, isInCart, add, remove } = props;
   return (
-    <>
+    <><div className={styles.container}>
       {lists.length===0?(
         <div className={styles.mensaje}>
-            <h2>No se encontraron Productos.</h2>
+            <h2>No se encontraron Productos !!!</h2>
         </div>
-        
       ):(lists.map((listsItem, index) => {
         return (
           <ProductList key={index} title={listsItem.title}>
@@ -52,6 +51,7 @@ export default function MainContent(props: MainContentProps) {
         );
       }))
       }
+    </div>
     </>
   );
 }

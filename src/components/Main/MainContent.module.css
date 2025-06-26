@@ -1,3 +1,6 @@
 .mensaje{
     text-align: center;
 }
+.container{
+    min-height: 400px;
+}

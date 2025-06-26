@@ -2,14 +2,16 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  background-color: #0b141a;
-  
   font-family: Roboto, sans-serif;
-  color: #e8eaed;
+  color: #000000;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }
 .footerContent{
   grid-column: 2/4;
   grid-row: 2/2;
-  border-top: 1px solid white;
+  border-top: 1px solid black;
   text-align: center;
 }

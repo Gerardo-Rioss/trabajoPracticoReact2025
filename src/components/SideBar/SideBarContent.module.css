@@ -3,8 +3,9 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  margin: 20px;
-  margin-top: 50px;
+  padding: 0;
+  padding-top: 0;
+  
 }
 .filterPrice {
   display: flex;

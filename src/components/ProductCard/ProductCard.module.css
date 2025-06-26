@@ -88,7 +88,7 @@
 }
 .buttonRemove {
   background-color: #cae0fd;
-  color: #0066ff;
+  color: red;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 4px;
