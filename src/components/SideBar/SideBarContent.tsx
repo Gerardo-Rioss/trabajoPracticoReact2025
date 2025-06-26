@@ -1,6 +1,78 @@
-import styles from './SideBarContent.module.css' 
-export default function SideBarContent() {
-  return   <div className={styles.Container}>
-    <h1>hola</h1>
-    </div>;
-}
+import styles from "./SideBarContent.module.css";
+
+type SideBarContentProps = {
+  selectedCategory: string;
+  setSelectedCategory: (v: string) => void;
+  priceFilter: string;
+  setPriceFilter: (v: string) => void;
+  categories: string[];
+};
+const SideBarContent = (props: SideBarContentProps) => {
+  const {
+    selectedCategory,
+    setSelectedCategory,
+    priceFilter,
+    setPriceFilter,
+    categories,
+  } = props;
+  return (
+    <div className={styles.container}>
+      <div className={styles.filerCategory}>
+        <select
+          name={selectedCategory}
+          onChange={(e) => setSelectedCategory(e.target.value)}
+        >
+          <option value="">Todas las categrías</option>
+          {categories.map((c) => (
+            <option key={c} value={c}>
+              {c}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div className={styles.filterPrice}>
+        <label htmlFor="">
+          <input
+            type="radio"
+            name="price"
+            value=""
+            checked={priceFilter === ""}
+            onChange={() => setPriceFilter("")}
+          />
+          Todos
+        </label>
+        <label htmlFor="">
+          <input
+            type="radio"
+            name="price"
+            value="Menos de $500"
+            checked={priceFilter === "Menos de $500"}
+            onChange={() => setPriceFilter("Menos de $500")}
+          />
+          Menos de $500
+        </label>
+        <label htmlFor="">
+          <input
+            type="radio"
+            name="price"
+            value="Mayor o igual a 500"
+            checked={priceFilter === "Mayor o igual a 500"}
+            onChange={() => setPriceFilter("Mayor o igual a 500")}
+          />
+          Mayor o igual a $500
+        </label>
+        <label htmlFor="">
+          <input
+            type="radio"
+            name="price"
+            value="Mayor a 1000"
+            checked={priceFilter === "Mayor a 1000"}
+            onChange={() => setPriceFilter("Mayor a 1000")}
+          />
+          Mayor a $1000
+        </label>
+      </div>
+    </div>
+  );
+};
+export default SideBarContent;

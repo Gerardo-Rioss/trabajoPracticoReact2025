@@ -1,8 +1,15 @@
-.Container{
-    width: 100%;
-    height: 100%;
-  background-color: #424445;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.50);
--webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.50);
--moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 20px;
+  margin-top: 50px;
+}
+.filterPrice {
+  display: flex;
+  flex-direction: column;
+}
+.filerCategory {
+  color: green;
 }

@@ -1,6 +1,6 @@
 import styles from "./ProductCard.module.css";
 type ProductCardProps = {
-  id: number;
+  id?: number;
   name: string;
   price: number;
   description: string;
@@ -12,7 +12,7 @@ type ProductCardProps = {
 };
 
 function ProductCard(props: ProductCardProps) {
-  const { id, name, price, description, image, inCart, onAdd, onRemove, category } =
+  const { name, price, description, image, inCart, onAdd, onRemove, category } =
     props;
   return (
     <div className={styles.cardContainer}>
@@ -21,11 +21,12 @@ function ProductCard(props: ProductCardProps) {
       </div>
       <div className={styles.cardContent}>
         <div className={styles.cardHeader}>
-          <span className={styles.id}>id:{id}</span>
           <p className={styles.name}>{name}</p>
           <p className={styles.price}>${price.toFixed(2)}</p>
           <p className={styles.description}>{description}</p>
+          <div className={styles.categoria}>
           <p className={styles.category}>{category}</p>
+          </div>
         </div>
         <div className={styles.buttonContainer}>
           {!inCart ? (

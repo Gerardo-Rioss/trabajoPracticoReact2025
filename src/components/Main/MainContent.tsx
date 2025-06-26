@@ -38,7 +38,6 @@ export default function MainContent(props: MainContentProps) {
             {listsItem.products.map((product) => (
               <ProductCard
                 key={product.id}
-                id={product.id}
                 name={product.name}
                 description={product.description}
                 price={product.price}

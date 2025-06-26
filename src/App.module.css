@@ -10,15 +10,13 @@
   gap: 0;
   grid-template-areas:
     "header header"
-    "sideNav mainContent"
+    "sideBar mainContent"
     "footer footer";
 }
 
 .header {
   grid-area: header;
-  background-color: #f8f9fa;
-  padding: 1rem;
-  border-bottom: 1px solid #e9ecef;
+  padding: 0;
 }
 
 .mainContent {
@@ -43,5 +41,4 @@ body {
 
 .sideBar {
   grid-area: sideBar;
-  border: black solid 1px
 }

@@ -49,10 +49,6 @@
   flex-direction: column;
   gap: 5px;
 }
-.id {
-  font-size: 12px;
-  visibility: hidden;
-}
 
 .name {
   padding: 0;
@@ -61,13 +57,11 @@
   margin: 0;
 }
 .description {
-  font-size: 14px;
+  font-size: 12px;
   color: #383838;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: wrap;
+  
   
 }
 .price {
@@ -101,6 +95,9 @@
   cursor: pointer;
 }
 
-.category{
-  color: green;
+.categoria{
+  margin: 0;
+  color: #5A238D;
+  font-weight: 800;
+  font-size: 12px;
 }
