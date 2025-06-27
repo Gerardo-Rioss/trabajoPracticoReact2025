@@ -1,28 +1,26 @@
 .container {
   display: flex;
+  height: 100%;
   flex-direction: column;
   gap: 1.5rem;
   padding: 1.5rem;
-  background-color: #ffffff;
+  background-color: #ebebeb;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  margin-top: 20px;
+  font-family: "Proxima Nova",-apple-system,Roboto,Arial,sans-serif,sans-serif;
 }
 .filterPrice {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
-.filerCategory {
-  color: green;
-}
-.filerCategory select {
+.filterCategory select {
   width: 100%;
-  padding: 0.75rem;
-  border-radius: 8px;
-  border: 1px solid #dcdcdc;
-  background-color: #f9f9f9;
-  font-size: 1rem;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: #ebebeb;
   transition: border-color 0.2s ease-in-out;
 }
 .filerCategory select:hover,
@@ -36,7 +34,6 @@
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
-  font-size: 0.95rem;
   color: #333;
   transition: color 0.2s;
 }

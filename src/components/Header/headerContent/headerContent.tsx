@@ -1,21 +1,16 @@
 import SearchBar from "../SearchBar/SearchBar";
 import NavMenu from "../NavMenu/NavMenu";
 import styles from "./headerContent.module.css";
-import NavFilter from "../NavFilter/NavFilter";
+
 
 type NavHeaderProps={
   total : number,
   setSearch: (searchValue:string)=>void,
   search: string,
-  selectedCategory: string,
-  setSelectedCategory:(v:string)=>void,
-  priceFilter: string,
-  setPriceFilter:(v:string)=>void,
-  categories:string[],
 }
 
 export const NavHeader = (props: NavHeaderProps) => {
-  const {total, setSearch, search, selectedCategory, priceFilter,setSelectedCategory,setPriceFilter, categories}=props
+  const {total, setSearch, search}=props
   return (
     <nav className={styles.navHeader}>
       <div className={styles.navLeftTopArea}>
@@ -32,7 +27,7 @@ export const NavHeader = (props: NavHeaderProps) => {
         <NavMenu total={total}/>
       </div>
       <div className={styles.navCenterBottomArea}>
-        <NavFilter selectedCategory={selectedCategory} priceFilter={priceFilter} setSelectedCategory={setSelectedCategory} setPriceFilter={setPriceFilter} categories={categories} />
+      
       </div>
       <div className={styles.navRightTopArea}>
         <img

@@ -17,7 +17,7 @@ const SideBarContent = (props: SideBarContentProps) => {
   } = props;
   return (
     <div className={styles.container}>
-      <div className={styles.filerCategory}>
+      <div className={styles.filterCategory}>
         <select
           name={selectedCategory}
           onChange={(e) => setSelectedCategory(e.target.value)}

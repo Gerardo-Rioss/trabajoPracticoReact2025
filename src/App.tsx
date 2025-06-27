@@ -110,11 +110,6 @@ function App() {
             total={total}
             setSearch={setSearch}
             search={search}
-            categories={categories}
-            selectedCategory={selectedCategory}
-            setSelectedCategory={setSelectedCategory}
-            priceFilter={priceFilter}
-            setPriceFilter={setPriceFilter}
           />
         </div>
         <div className={styles.mainContent}>
