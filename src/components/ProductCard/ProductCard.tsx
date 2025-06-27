@@ -6,7 +6,7 @@ type ProductCardProps = {
   description: string;
   image: string;
   inCart: boolean;
-  category:string;
+  category: string;
   onAdd: () => void;
   onRemove: () => void;
 };
@@ -19,26 +19,21 @@ function ProductCard(props: ProductCardProps) {
       <div className={styles.imageContainer}>
         <img src={image} alt={name} className={styles.image} />
       </div>
-      <div className={styles.cardContent}>
-        <div className={styles.cardHeader}>
-          <p className={styles.name}>{name}</p>
-          <p className={styles.price}>${price.toFixed(2)}</p>
-          <p className={styles.description}>{description}</p>
-          <div className={styles.categoria}>
-          <p className={styles.category}>{category}</p>
-          </div>
-        </div>
-        <div className={styles.buttonContainer}>
-          {!inCart ? (
-            <button onClick={onAdd} className={styles.buttonAdd}>
-              Agregar Carrito
-            </button>
-          ) : (
-            <button onClick={onRemove} className={styles.buttonRemove}>
-              Quitar carrito
-            </button>
-          )}
-        </div>
+      <div className={styles.cardHeader}>
+        <p className={styles.name}>{name}</p>
+        <p className={styles.price}>${price.toFixed(2)}</p>
+        <p className={styles.description}>{description}</p>
+        <p className={styles.category}>{category}</p>
+
+        {!inCart ? (
+          <button onClick={onAdd} className={styles.buttonAdd}>
+            Agregar al Carrito
+          </button>
+        ) : (
+          <button onClick={onRemove} className={styles.buttonRemove}>
+            Quitar del carrito
+          </button>
+        )}
       </div>
     </div>
   );

@@ -90,11 +90,11 @@ function App() {
           selectedCategory === "" || product.category === selectedCategory;
         //filtra segun radio buttom seleccionado en el rango de precio
         let filteredByPrice = true;
-        if (priceFilter === "Menos de $500")
+        if (priceFilter === "Hasta $500")
           filteredByPrice = product.price < 500;
-        else if (priceFilter === "Mayor o igual a 500")
+        else if (priceFilter === "$500 a $1.000")
           filteredByPrice = product.price >= 500 && product.price <= 1000;
-        else if (priceFilter === "Mayor a 1000")
+        else if (priceFilter === "Mas de $1.000")
           filteredByPrice = product.price > 1000;
         // retorna la lista filtrada
         return filteredByName && filteredByCategory && filteredByPrice;
@@ -172,7 +172,7 @@ const fullList: ProductList[]=[
         name: "Smartwatch Apple Watch Series 8",
         description: "Reloj inteligente con monitor de frecuencia cardíaca y oxígeno en sangre",
         price: 399,
-        image: "https://itechstore.com.ar/1564-large_default/apple-watch-series-8-41mm-midnight-sport-band-m-l.jpg",
+        image: "https://http2.mlstatic.com/D_NQ_NP_863059-MLA52129090254_102022-O.webp",
         category: "Wearables",
       },
       {
@@ -204,7 +204,7 @@ const fullList: ProductList[]=[
         name: "Altavoz JBL PartyBox",
         description: "Altavoz portátil con luces LED",
         price: 299,
-        image: "https://oportunidades-vip.com.ar/wp-content/uploads/2024/12/Parlante_Portatil_Inalambrico_Bluetooth_Luces_Led_Gts-1360_D_774381-MLA81040854894_122024-O-1200x1200.jpg",
+        image: "https://m.media-amazon.com/images/I/810nGMz0r8L._AC_SL1500_.jpg",
         category: "Audio",
       },
     ]

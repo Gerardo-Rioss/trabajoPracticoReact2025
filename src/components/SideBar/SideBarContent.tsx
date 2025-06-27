@@ -17,6 +17,7 @@ const SideBarContent = (props: SideBarContentProps) => {
   } = props;
   return (
     <div className={styles.container}>
+      <p>Categorías:</p>
       <div className={styles.filterCategory}>
         <select
           name={selectedCategory}
@@ -30,6 +31,7 @@ const SideBarContent = (props: SideBarContentProps) => {
           ))}
         </select>
       </div>
+      <p>Precios:</p>
       <div className={styles.filterPrice}>
         <label htmlFor="">
           <input
@@ -45,31 +47,31 @@ const SideBarContent = (props: SideBarContentProps) => {
           <input
             type="radio"
             name="price"
-            value="Menos de $500"
-            checked={priceFilter === "Menos de $500"}
-            onChange={() => setPriceFilter("Menos de $500")}
+            value="Hasta $500"
+            checked={priceFilter === "Hasta $500"}
+            onChange={() => setPriceFilter("Hasta $500")}
           />
-          Menos de $500
+          Hasta $ 500
         </label>
         <label htmlFor="">
           <input
             type="radio"
             name="price"
-            value="Mayor o igual a 500"
-            checked={priceFilter === "Mayor o igual a 500"}
-            onChange={() => setPriceFilter("Mayor o igual a 500")}
+            value="$500 a $1.000"
+            checked={priceFilter === "$500 a $1.000"}
+            onChange={() => setPriceFilter("$500 a $1.000")}
           />
-          Mayor o igual a $500
+          $500 a $1.000
         </label>
         <label htmlFor="">
           <input
             type="radio"
             name="price"
-            value="Mayor a 1000"
-            checked={priceFilter === "Mayor a 1000"}
-            onChange={() => setPriceFilter("Mayor a 1000")}
+            value="Mas de $1.000"
+            checked={priceFilter === "Mas de $1.000"}
+            onChange={() => setPriceFilter("Mas de $1.000")}
           />
-          Mayor a $1000
+          Más de $1.000
         </label>
       </div>
     </div>

@@ -3,14 +3,13 @@
   margin:10px 10px ;
   background-color: #f8f8ff;
   border-radius: 20px;
- 
 }
 .title {
   margin: 0;
   height: 100%;
   border-radius: 10px;
   padding: 10px 0 10px 50px;
-  font-size: 20px;
+  font-size: 16px;
   text-align: left;
   line-height: 19px;
   color: white;
