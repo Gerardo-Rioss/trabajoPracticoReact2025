@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: #ebebeb;
+  border-radius: 12px;
+  font-size: 14px;
+  margin-top: 20px;
+  font-family: "Proxima Nova",-apple-system,Roboto,Arial,sans-serif,sans-serif;
+}
+.filterPrice {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: white;
+  border-radius: 6px;
+  border: solid 1px #ddd;
+  margin: 4px 0;
+  padding: 11px;
+  font-size: 12px;
+  font-weight: 400;
+}
+.filterCategory select {
+  width: 100%;
+  padding: 0;
+  border: 1px solid#ddd;
+  margin: 4px 0;
+  padding: 11px;
+  border-radius: 6px;
+  outline: none;
+  background-color: #ebebeb;
+  background: white;
+  transition: border-color 0.2s ease-in-out;
+}
+.filerCategory select:hover,
+.filerCategory select:focus {
+  border-color: #3483fa;
+  outline: none;
+  background-color: #fff;
+}
+.filterPrice label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.2s;
+}
+.filterPrice input[type="radio"] {
+  accent-color: #3483fa;
+  transform: scale(1.1);
+}
+.filterPrice input[type="radio"]:checked + span {
+  font-weight: 600;
+  color: #3483fa;
+}
+.container p{
+  font-weight: 600;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}

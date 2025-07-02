@@ -1,12 +1,13 @@
 import styles from './NavMenu.module.css'
-export const NavMenu = () => {
+type NavMenuProps={
+  total: number,
+}
+export const NavMenu = (props:NavMenuProps) => {
+  const {total} = props
   return (
-    <div className={styles.links}>
-      <a href="/">Inicio</a>
-      <a href="/">Creá tu cuenta</a>
-      <a href="/">Ingresá</a>
-      <a href="/">Mis compras</a>
-      <a href="">🛒</a>
+    <div className={styles.container}>
+      <div>🛒</div>
+      <div className={styles.total}> Total: ${total.toFixed(2)}</div>
     </div>
   );
 }
