@@ -9,6 +9,7 @@ import type { ProductList } from "./types/ProductList";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Layout from "./components/Layout/layout";
 import Home from "./pages/Home";
+import ProductDetail from "./components/ProductDetail/ProductoDetail";
 
 function App() {
   //Estado para el carrito
@@ -112,6 +113,10 @@ function App() {
                   removeFromCart={removeFromCart}
                 />
               }
+            ></Route>
+            <Route
+              path="/producto/:id"
+              element={<ProductDetail id={101} addToCart={addToCart} />}
             ></Route>
           </Route>
         </Routes>
