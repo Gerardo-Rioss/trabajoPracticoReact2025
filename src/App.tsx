@@ -4,21 +4,11 @@ import { FooterContent } from "./components/Footer/FooterContent";
 import MainContent from "./components/Main/MainContent";
 import { useState } from "react";
 import SideBarContent from "./components/SideBar/SideBarContent";
-
-// TIPADOS DE DATOS
-type Product = {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  image: string;
-  category: string;
-};
-type ProductList = {
-  title: string;
-  decription?: string;
-  products: Product[];
-};
+import type { Product } from "./types/Product";
+import type { ProductList } from "./types/ProductList";
+import { BrowserRouter, Route, Routes } from "react-router";
+import Layout from "./components/Layout/layout";
+import Home from "./pages/Home";
 
 function App() {
   //Estado para el carrito
@@ -29,7 +19,6 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
   //estado de los filtros por precio
   const [priceFilter, setPriceFilter] = useState("");
-
   const categories = [
     "Electrónica",
     "Audio",
@@ -54,27 +43,22 @@ function App() {
     "Accesorios",
     "Gaming",
   ];
-
   // Verificar si el producto ya esta en el carrito
   const isInCart = (id: number) => {
     return cart.some((p) => p.id === id);
   };
-
   //agregar producto al carrito
   const addToCart = (p: Product) => {
     if (!isInCart(p.id)) {
       setCart([...cart, p]);
     }
   };
-
   //Remover producto del carrito
   const removeFromCart = (id: number) => {
     setCart(cart.filter((p) => p.id !== id));
   };
-
   // sumar el precio de todos los productos agregados en el carrito
   const total = cart.reduce((sum, p) => sum + p.price, 0);
-
   //Filrar listado por la busqueda, categoria o precio
   const filteredList = fullList
     .map((list) => ({
@@ -99,35 +83,39 @@ function App() {
       }),
     }))
     .filter((list) => list.products.length > 0);
-  console.log(fullList);
 
   return (
     <>
-      <div className={styles.appContainer}>
-        <div className={styles.header}>
-          <NavHeader total={total} setSearch={setSearch} search={search} />
-        </div>
-        <div className={styles.mainContent}>
-          <MainContent
-            lists={filteredList}
-            isInCart={isInCart}
-            add={addToCart}
-            remove={removeFromCart}
-          />
-        </div>
-        <div className={styles.sideBar}>
-          <SideBarContent
-            categories={categories}
-            selectedCategory={selectedCategory}
-            setSelectedCategory={setSelectedCategory}
-            priceFilter={priceFilter}
-            setPriceFilter={setPriceFilter}
-          />
-        </div>
-        <div className={styles.footer}>
-          <FooterContent />
-        </div>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            element={
+              <Layout
+                total={total}
+                setSearch={setSearch}
+                search={search}
+                selectedCategory={selectedCategory}
+                setSelectedCategory={setSelectedCategory}
+                priceFilter={priceFilter}
+                setPriceFilter={setPriceFilter}
+                categories={categories}
+              />
+            }
+          >
+            <Route
+              path="/"
+              element={
+                <Home
+                  filteredList={filteredList}
+                  isInCart={isInCart}
+                  addToCart={addToCart}
+                  removeFromCart={removeFromCart}
+                />
+              }
+            ></Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

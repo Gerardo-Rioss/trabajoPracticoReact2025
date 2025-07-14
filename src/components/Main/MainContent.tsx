@@ -1,6 +1,7 @@
 import ProductList from "../ProductList/ProductList";
 import ProductCard from "../ProductCard/ProductCard";
 import styles from "../Main/MainContent.module.css"
+import ProductDetail from "../ProductDetail/ProductoDetail";
 
 type Product = {
   id: number;
@@ -38,7 +39,7 @@ export default function MainContent(props: MainContentProps) {
               <ProductCard
                 key={product.id}
                 name={product.name}
-                description={product.description}
+                /* description={product.description} */
                 price={product.price}
                 image={product.image}
                 category={product.category}
