@@ -29,12 +29,12 @@ function ProductDetail(props: ProductDetailProps) {
     <div className={styles.container}>
       <div className={styles.header}>
         <h1 className={styles.name}>{product.name}</h1>
-        <div className={styles.price}>${product.price.toFixed(2)}</div>
       </div>
       <div className={styles.imageContainer}>
         <img src={product.image} alt={product.name} className={styles.image} />
       </div>
       <p className={styles.description}>{product.description}</p>
+        <div className={styles.price}>${product.price.toFixed(2)}</div>
       <div className={styles.meta}>
         <span className={styles.category}>{product.category}</span>
         <span className={styles.id}>ID: {product.id}</span>

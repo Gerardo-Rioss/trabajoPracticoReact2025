@@ -61,7 +61,7 @@
   margin: 0;
 }
 
-button {
+/* button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,7 +84,7 @@ button {
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
-}
+} */
 
 .category {
   color: #5a238d;

@@ -1,4 +1,3 @@
-// Si falta instalar react-router-dom, ejecutar: npm install react-router-dom
 import { useCart } from "../../context/CartContext";
 import styles from "./Cart.module.css";
 import { Link } from "react-router";
