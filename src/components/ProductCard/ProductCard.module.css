@@ -1,124 +1,71 @@
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .cardContainer {
+  width: 150px; 
+  height: 220px; 
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-  width: 183px;
-  height: 240px;
-}
-
-.imageContainer {
-  position: relative;
-  width: 100%;
-  padding-top: 75%;
-  overflow: hidden;
-}
-
-.image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
 }
 
 .cardContainer:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-.cardHeader {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.cardHeader p {
-  padding: 0;
-  margin: 0;
-}
-
-.name {
-  font-size: 14px;
-  text-align: center;
-  height: 50px;
+.imageContainer {
   width: 100%;
-}
-.description {
-  font-size: 10px;
-  color: #383838;
-}
-.price {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #007bff;
-  margin: 0;
-}
-
-/* button {
+  height: 120px;
+  overflow: hidden;
+  background: #f8fafc;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 25px;
-  width: 150px;
-  font-size: 12px;
 }
-.buttonAdd {
-  background-color: #3483fa;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.buttonRemove {
-  background-color: rgb(163, 0, 0);
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-} */
 
-.category {
-  color: #5a238d;
-  font-weight: 800;
-  font-size: 12px;
+.image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  transition: transform 0.2s ease;
 }
-a {
-  display: inline-block;
-  margin-top: 0.5rem;
-  color: #34495e;
-  text-decoration: none;
-  position: relative;
+
+.cardContainer:hover .image {
+  transform: scale(1.05);
+}
+
+.cardContent {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex-grow: 1;
+}
+
+.name {
+  font-size: 0.8rem;
   font-weight: 500;
-  transition: color 0.2s ease;
+  margin: 0;
+  color: #1e293b;
+  display: -webkit-box;
+  /* -webkit-line-clamp: 2; */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background-color: #007bff;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
-}
-
-a:hover {
-  color: #0056b3;
-}
-
-a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+.price {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4f46e5;
+  margin: 0;
+  margin-top: auto;
 }

@@ -1,17 +1,17 @@
+/* NavMenu.module.css */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
 .total {
-    padding: 0;
-    margin: 0;
-    line-height: 14px;
-    border: none;
-    font-size: 16px;
-    font-weight: 550;
-    display: flex;
-    gap: 1rem;
-    text-decoration: none;
+  font-weight: 600;
+  color: #4f46e5;
+  background-color: #eef2ff;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
 }
-.container{
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-}
+
