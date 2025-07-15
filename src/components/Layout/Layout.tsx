@@ -5,7 +5,6 @@ import { FooterContent } from "../Footer/FooterContent";
 import styles from "./Layout.module.css";
 
 type LayoutProps = {
-  total: number;
   setSearch: (searchValue: string) => void;
   search: string;
   selectedCategory: string;
@@ -16,7 +15,7 @@ type LayoutProps = {
 };
 
 function Layout(props:LayoutProps) {
-  const {total,setSearch,search,selectedCategory,
+  const {setSearch,search,selectedCategory,
     setSelectedCategory,
     priceFilter,
     setPriceFilter,
@@ -25,7 +24,7 @@ function Layout(props:LayoutProps) {
     <>
       <div className={styles.appContainer}>
         <div className={styles.header}>
-          <NavHeader total={total} setSearch={setSearch} search={search} />
+          <NavHeader setSearch={setSearch} search={search} />
         </div>
         <div className={styles.mainContent}>
           <Outlet />

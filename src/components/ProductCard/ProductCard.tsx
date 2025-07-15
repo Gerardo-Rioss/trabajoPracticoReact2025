@@ -3,7 +3,6 @@ type ProductCardProps = {
   id?: number;
   name: string;
   price: number;
-  /* description: string; */
   image: string;
   inCart: boolean;
   category: string;
@@ -12,7 +11,7 @@ type ProductCardProps = {
 };
 
 function ProductCard(props: ProductCardProps) {
-  const { name, price, /* description, */ image, inCart, onAdd, onRemove, category } =
+  const { name, price, image, inCart, onAdd, onRemove, category } =
     props;
   return (
     <div className={styles.cardContainer}>
@@ -22,7 +21,6 @@ function ProductCard(props: ProductCardProps) {
       <div className={styles.cardHeader}>
         <p className={styles.name}>{name}</p>
         <p className={styles.price}>${price.toFixed(2)}</p>
-        {/* <p className={styles.description}>{description}</p> */}
         <p className={styles.category}>{category}</p>
 
         {!inCart ? (

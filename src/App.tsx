@@ -1,19 +1,12 @@
-import styles from "./App.module.css";
-import { NavHeader } from "./components/Header/headerContent/headerContent";
-import { FooterContent } from "./components/Footer/FooterContent";
-import MainContent from "./components/Main/MainContent";
 import { useState } from "react";
-import SideBarContent from "./components/SideBar/SideBarContent";
-import type { Product } from "./types/Product";
 import type { ProductList } from "./types/ProductList";
 import { BrowserRouter, Route, Routes } from "react-router";
-import Layout from "./components/Layout/layout";
+import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home";
 import ProductDetail from "./components/ProductDetail/ProductoDetail";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
-  //Estado para el carrito
-  const [cart, setCart] = useState<Product[]>([]);
   //Estado del buscador
   const [search, setSearch] = useState("");
   //Estado de las categorias
@@ -44,22 +37,7 @@ function App() {
     "Accesorios",
     "Gaming",
   ];
-  // Verificar si el producto ya esta en el carrito
-  const isInCart = (id: number) => {
-    return cart.some((p) => p.id === id);
-  };
-  //agregar producto al carrito
-  const addToCart = (p: Product) => {
-    if (!isInCart(p.id)) {
-      setCart([...cart, p]);
-    }
-  };
-  //Remover producto del carrito
-  const removeFromCart = (id: number) => {
-    setCart(cart.filter((p) => p.id !== id));
-  };
-  // sumar el precio de todos los productos agregados en el carrito
-  const total = cart.reduce((sum, p) => sum + p.price, 0);
+
   //Filrar listado por la busqueda, categoria o precio
   const filteredList = fullList
     .map((list) => ({
@@ -87,40 +65,42 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            element={
-              <Layout
-                total={total}
-                setSearch={setSearch}
-                search={search}
-                selectedCategory={selectedCategory}
-                setSelectedCategory={setSelectedCategory}
-                priceFilter={priceFilter}
-                setPriceFilter={setPriceFilter}
-                categories={categories}
-              />
-            }
-          >
+      <CartProvider>
+        <BrowserRouter>
+          <Routes>
             <Route
-              path="/"
               element={
-                <Home
-                  filteredList={filteredList}
-                  isInCart={isInCart}
-                  addToCart={addToCart}
-                  removeFromCart={removeFromCart}
+                <Layout
+                  setSearch={setSearch}
+                  search={search}
+                  selectedCategory={selectedCategory}
+                  setSelectedCategory={setSelectedCategory}
+                  priceFilter={priceFilter}
+                  setPriceFilter={setPriceFilter}
+                  categories={categories}
                 />
               }
-            ></Route>
-            <Route
-              path="/producto/:id"
-              element={<ProductDetail id={101} addToCart={addToCart} />}
-            ></Route>
-          </Route>
-        </Routes>
-      </BrowserRouter>
+            >
+              <Route
+                path="/"
+                element={
+                  <Home
+                    filteredList={filteredList}
+                  />
+                }
+              ></Route>
+              <Route
+                path="/producto/:id"
+                element={
+                  <ProductDetail
+                    lists={filteredList}
+                  />
+                }
+              ></Route>
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
     </>
   );
 }

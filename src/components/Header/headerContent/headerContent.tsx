@@ -4,13 +4,12 @@ import styles from "./headerContent.module.css";
 
 
 type NavHeaderProps={
-  total : number,
   setSearch: (searchValue:string)=>void,
   search: string,
 }
 
 export const NavHeader = (props: NavHeaderProps) => {
-  const {total, setSearch, search}=props
+  const { setSearch, search}=props
   return (
     <nav className={styles.navHeader}>
       <div className={styles.navLeftTopArea}>
@@ -24,7 +23,7 @@ export const NavHeader = (props: NavHeaderProps) => {
         <SearchBar setSearch={setSearch} search={search}/>
       </div>
       <div className={styles.navRigthBottomArea}>
-        <NavMenu total={total}/>
+        <NavMenu />
       </div>
       <div className={styles.navCenterBottomArea}>
       

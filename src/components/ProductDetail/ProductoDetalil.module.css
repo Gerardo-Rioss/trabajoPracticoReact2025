@@ -64,3 +64,21 @@
   font-size: 0.9rem;
   color: #7f8c8d;
 }
+.buttonAdd {
+  background-color: #3483fa;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  
+  
+}
+.buttonRemove {
+  background-color: rgb(163, 0, 0);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
