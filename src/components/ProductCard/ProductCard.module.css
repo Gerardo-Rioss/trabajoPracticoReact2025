@@ -8,14 +8,14 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
   width: 183px;
-  height: 200px;
+  height: 240px;
 }
 
 .imageContainer {
-  width: 100%;
   position: relative;
-  /* aspect-ratio: 1 / 1;
-  overflow: hidden; */
+  width: 100%;
+  padding-top: 75%;
+  overflow: hidden;
 }
 
 .image {
