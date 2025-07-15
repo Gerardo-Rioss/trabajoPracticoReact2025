@@ -7,6 +7,8 @@ type ProductCardProps = {
 function ProductCard(props: ProductCardProps) {
   const { product } = props;
   return (
+    <>
+    <Link to={`/product/${product.id}`}>
     <div className={styles.cardContainer}>
       <div className={styles.imageContainer}>
         <img src={product.image} alt={product.name} className={styles.image} />
@@ -14,9 +16,10 @@ function ProductCard(props: ProductCardProps) {
       <div className={styles.cardHeader}>
         <p className={styles.name}>{product.name}</p>
         <p className={styles.price}>${product.price.toFixed(2)}</p>
-        <Link to={`/product/${product.id}`}>Ver mas</Link>
       </div>
     </div>
+    </Link>
+    </>
   );
 }
 export default ProductCard;

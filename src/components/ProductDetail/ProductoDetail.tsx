@@ -39,7 +39,7 @@ function ProductDetail(props: ProductDetailProps) {
         <span className={styles.category}>{product.category}</span>
         <span className={styles.id}>ID: {product.id}</span>
       </div>
-      <div>
+      <div className={styles.actions}>
         {!isInCart(product.id) ? (
           <button
             onClick={() => addToCart(product)}

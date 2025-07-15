@@ -1,84 +1,110 @@
 .container {
-  max-width: 800px;
+  max-width: 500px;
   margin: 2rem auto;
-  padding: 2rem;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .name {
   font-size: 2rem;
-  color: #2c3e50;
+  font-weight: 700;
+  color: #333333;
   margin: 0;
 }
 
 .price {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #27ae60;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #007bff;
 }
 
 .imageContainer {
-  width: 100%;
-  height: 400px;
-  margin-bottom: 1.5rem;
-  overflow: hidden;
-  border-radius: 8px;
+  margin: 2rem 0;
+  text-align: center;
 }
 
 .image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .description {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.6;
-  color: #34495e;
+  color: #555555;
   margin-bottom: 1.5rem;
 }
 
 .meta {
   display: flex;
-  justify-content: space-between;
-  padding-top: 1.5rem;
-  border-top: 1px solid #ecf0f1;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #888888;
+  margin-bottom: 2rem;
 }
 
 .category {
-  font-size: 0.9rem;
-  color: #7f8c8d;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-weight: 500;
 }
 
 .id {
-  font-size: 0.9rem;
-  color: #7f8c8d;
+  font-style: italic;
+}
+
+.buttonAdd,
+.buttonRemove {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  color: #ffffff; /* Hace que el texto sea blanco y legible */
 }
 .buttonAdd {
-  background-color: #3483fa;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  
-  
+  background-color: #28a745;
+  color: #ffffff;
 }
+
+.buttonAdd:hover {
+  background-color: #218838;
+}
+
 .buttonRemove {
-  background-color: rgb(163, 0, 0);
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
+  background-color: #dc3545;
+}
+
+.buttonRemove:hover {
+  background-color: #c82333;
+}
+
+.backLink {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.backLink:hover {
+  color: #0056b3;
+}
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
