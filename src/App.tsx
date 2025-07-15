@@ -3,7 +3,7 @@ import type { ProductList } from "./types/ProductList";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home";
-import ProductDetail from "./components/ProductDetail/ProductoDetail";
+import ProductDetail from "./components/ProductDetail/ProductDetail";
 import { CartProvider } from "./context/CartContext";
 import Cart from "./components/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
