@@ -1,10 +1,24 @@
-import styles from './FooterContest.module.css'
+
+import styles from "./FooterContent.module.css";
+
 export const FooterContent = () => {
   return (
-    <div className={styles.footerContainer}>
+    <footer className={styles.footerContainer}>
       <div className={styles.footerContent}>
-        <h3>Trabajo Práctico - Rios Gerardo</h3>
+        <div className={styles.footerInfo}>
+          <h3 className={styles.footerTitle}>
+            Trabajo Práctico - Rios Gerardo
+          </h3>
+          <p className={styles.footerDescription}>
+            Aplicación de e-commerce desarrollada con React y TypeScript
+          </p>
+        </div>
+        <div className={styles.footerLegal}>
+          <p className={styles.copyright}>
+            © {new Date().getFullYear()} Todos los derechos reservados
+          </p>
+        </div>
       </div>
-    </div>
+    </footer>
   );
 };
