@@ -1,37 +1,20 @@
 import styles from "./ProductCard.module.css";
+import type { Product } from "../../types/Product";
+import { Link } from "react-router";
 type ProductCardProps = {
-  id?: number;
-  name: string;
-  price: number;
-  image: string;
-  inCart: boolean;
-  category: string;
-  onAdd: () => void;
-  onRemove: () => void;
+  product: Product;
 };
-
 function ProductCard(props: ProductCardProps) {
-  const { name, price, image, inCart, onAdd, onRemove, category } =
-    props;
+  const { product } = props;
   return (
     <div className={styles.cardContainer}>
       <div className={styles.imageContainer}>
-        <img src={image} alt={name} className={styles.image} />
+        <img src={product.image} alt={product.name} className={styles.image} />
       </div>
       <div className={styles.cardHeader}>
-        <p className={styles.name}>{name}</p>
-        <p className={styles.price}>${price.toFixed(2)}</p>
-        <p className={styles.category}>{category}</p>
-
-        {!inCart ? (
-          <button onClick={onAdd} className={styles.buttonAdd}>
-            Agregar al Carrito
-          </button>
-        ) : (
-          <button onClick={onRemove} className={styles.buttonRemove}>
-            Quitar del carrito
-          </button>
-        )}
+        <p className={styles.name}>{product.name}</p>
+        <p className={styles.price}>${product.price.toFixed(2)}</p>
+        <Link to={`/product/${product.id}`}>Ver mas</Link>
       </div>
     </div>
   );

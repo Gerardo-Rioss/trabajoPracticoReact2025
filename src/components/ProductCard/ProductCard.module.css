@@ -4,7 +4,7 @@
   margin: 0;
   /* max-width: 250px; */
   width: 183px;
-  height: 300px;
+  height: 220px;
   border-radius: 12px;
   border: 1px solid #ccc;
   overflow: hidden;
@@ -12,20 +12,18 @@
   transition: transform 0.1s ease, box-shadow 0.5s ease;
   cursor: pointer;
   background-color: #f5efed;
-  font-family: Proxima Nova,-apple-system,Helvetica Neue,helvetica,roboto,arial,sans-serif;
+  font-family: Proxima Nova,-apple-system,Roboto,Arial,sans-serif;
   padding: 10px;
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
-  
 }
 .imageContainer {
   position: relative;
   width: 100%;
   padding-top: 75%;
   overflow: hidden;
-  
 }
 
 .card:hover {
@@ -48,32 +46,30 @@
   flex-direction: column;
   gap: 5px;
   align-items: center;
-  justify-content:end ;
-  
+  justify-content: end;
+  margin-top: 10px;
 }
-.cardHeader p{
+.cardHeader p {
   padding: 0;
   margin: 0;
 }
 
 .name {
-   font-size: 12px;
- }
+  font-size: 14px;
+  text-align: center;
+  height: 50px;
+  width: 100%;
+}
 .description {
   font-size: 10px;
   color: #383838;
- 
-  
-  
 }
 .price {
-  
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 25px;
   align-self: center;
 }
 
-button{
+button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,8 +84,6 @@ button{
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
-  
-  
 }
 .buttonRemove {
   background-color: rgb(163, 0, 0);
@@ -100,9 +94,8 @@ button{
   cursor: pointer;
 }
 
-.category{
-  
-  color: #5A238D;
+.category {
+  color: #5a238d;
   font-weight: 800;
   font-size: 12px;
 }
