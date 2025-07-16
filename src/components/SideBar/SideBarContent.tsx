@@ -7,74 +7,63 @@ type SideBarContentProps = {
   setPriceFilter: (v: string) => void;
   categories: string[];
 };
-const SideBarContent = (props: SideBarContentProps) => {
-  const {
-    selectedCategory,
-    setSelectedCategory,
-    priceFilter,
-    setPriceFilter,
-    categories,
-  } = props;
+
+const SideBarContent = ({
+  selectedCategory,
+  setSelectedCategory,
+  priceFilter,
+  setPriceFilter,
+  categories,
+}: SideBarContentProps) => {
   return (
     <div className={styles.container}>
-      <p>Categorías:</p>
-      <div className={styles.filterCategory}>
-        <select
-          name={selectedCategory}
-          onChange={(e) => setSelectedCategory(e.target.value)}
-        >
-          <option value="">Todas las categrías</option>
-          {categories.map((c) => (
-            <option key={c} value={c}>
-              {c}
-            </option>
-          ))}
-        </select>
+      <h3 className={styles.sectionTitle}>Filtrar productos</h3>
+
+      <div className={styles.filterSection}>
+        <h4 className={styles.filterTitle}>Categorías</h4>
+        <div className={styles.selectContainer}>
+          <select
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className={styles.selectInput}
+          >
+            <option value="">Todas las categorías</option>
+            {categories.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </select>
+          <span className={styles.selectArrow}>▼</span>
+        </div>
       </div>
-      <p>Precios:</p>
-      <div className={styles.filterPrice}>
-        <label htmlFor="">
-          <input
-            type="radio"
-            name="price"
-            value=""
-            checked={priceFilter === ""}
-            onChange={() => setPriceFilter("")}
-          />
-          Todos
-        </label>
-        <label htmlFor="">
-          <input
-            type="radio"
-            name="price"
-            value="Hasta $500"
-            checked={priceFilter === "Hasta $500"}
-            onChange={() => setPriceFilter("Hasta $500")}
-          />
-          Hasta $ 500
-        </label>
-        <label htmlFor="">
-          <input
-            type="radio"
-            name="price"
-            value="$500 a $1.000"
-            checked={priceFilter === "$500 a $1.000"}
-            onChange={() => setPriceFilter("$500 a $1.000")}
-          />
-          $500 a $1.000
-        </label>
-        <label htmlFor="">
-          <input
-            type="radio"
-            name="price"
-            value="Mas de $1.000"
-            checked={priceFilter === "Mas de $1.000"}
-            onChange={() => setPriceFilter("Mas de $1.000")}
-          />
-          Más de $1.000
-        </label>
+
+      <div className={styles.filterSection}>
+        <h4 className={styles.filterTitle}>Rango de precios</h4>
+        <div className={styles.radioGroup}>
+          {[
+            { value: "", label: "Todos los precios" },
+            { value: "Hasta $500", label: "Hasta $500" },
+            { value: "$500 a $1.000", label: "$500 a $1.000" },
+            { value: "Mas de $1.000", label: "Más de $1.000" },
+          ].map((option) => (
+            <label key={option.value} className={styles.radioLabel}>
+              <input
+                type="radio"
+                name="price"
+                value={option.value}
+                checked={priceFilter === option.value}
+                onChange={() => setPriceFilter(option.value)}
+                className={styles.radioInput}
+              />
+              <span className={styles.customRadio}></span>
+              {option.label}
+            </label>
+          ))}
+        </div>
       </div>
     </div>
   );
 };
+
 export default SideBarContent;
