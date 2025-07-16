@@ -9,7 +9,6 @@ import Cart from "./components/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
 import NotFound from "./components/NotFound/NotFound";
 
-
 function App() {
   //Estado del buscador
   const [search, setSearch] = useState("");
@@ -87,24 +86,16 @@ function App() {
             >
               <Route
                 path="/"
-                element={
-                  <Home
-                    filteredList={filteredList}
-                  />
-                }
+                element={<Home filteredList={filteredList} />}
               ></Route>
               <Route
                 path="/product/:id"
-                element={
-                  <ProductDetail
-                    lists={filteredList}
-                  />
-                }
+                element={<ProductDetail lists={filteredList} />}
               ></Route>
-              <Route path="/cart" element={<Cart/>}></Route>
-              <Route path="/checkout" element={<Checkout/>}></Route>
-              <Route path="/404" element={<NotFound/>}></Route>
-              <Route path="*" element={<NotFound/>}></Route>
+              <Route path="/cart" element={<Cart />}></Route>
+              <Route path="/checkout" element={<Checkout />}></Route>
+              <Route path="/404" element={<NotFound />}></Route>
+              <Route path="*" element={<NotFound />}></Route>
             </Route>
           </Routes>
         </BrowserRouter>

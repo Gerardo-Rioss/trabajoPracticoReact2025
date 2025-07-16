@@ -8,6 +8,9 @@ type CartContextType = {
   removeFromCart: (id: number) => void;
   total: number;
   clearCart:()=>void;
+  increaseQuantify:(id:number)=>void;
+  decreaseQuantify:(id:number)=>void;
+  getProductQuantify:(id:number)=>number;
 };
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
