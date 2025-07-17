@@ -4,7 +4,7 @@ import { useCart } from "../../../context/CartContext";
 import { FaShoppingCart } from "react-icons/fa"; 
 
 export const NavMenu = () => {
-  const { total, cart } = useCart();
+  const { cart } = useCart();
   const itemCount = cart.length;
 
   return (
@@ -21,7 +21,6 @@ export const NavMenu = () => {
           )}
         </div>
       </Link>
-      {itemCount > 0 && <div className={styles.total}>${total.toFixed(2)}</div>}
     </div>
   );
 };
