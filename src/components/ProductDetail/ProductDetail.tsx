@@ -3,6 +3,7 @@ import styles from "./ProductDetail.module.css";
 import { useCart } from "../../context/CartContext";
 import { useParams } from "react-router";
 import { Link } from "react-router";
+import { useState } from "react";
 
 type ProductDetailProps = {
   lists: ProductList[];
@@ -12,11 +13,22 @@ function ProductDetail(props: ProductDetailProps) {
   const { lists } = props;
   const { id } = useParams<{ id: string }>();
   const { addToCart, removeFromCart, isInCart } = useCart();
+  const [showAddedMessage, setShowAddedMessage] = useState(false);
 
   const productId = Number(id);
   const product = lists
     .flatMap((list) => list.products)
     .find((p) => p.id === productId);
+
+  const handleCartAction = () => {
+    if (isInCart(product.id)) {
+      removeFromCart(product.id);
+      setShowAddedMessage(false);
+    } else {
+      addToCart(product);
+      setShowAddedMessage(true);
+    }
+  };
 
   if (!product) {
     return (
@@ -49,14 +61,18 @@ function ProductDetail(props: ProductDetailProps) {
         <div className={styles.price}>${product.price.toFixed(2)}</div>
 
         <div className={styles.actions}>
-          <button
-            onClick={() =>
-              inCart ? removeFromCart(product.id) : addToCart(product)
-            }
-            className={inCart ? styles.buttonRemove : styles.buttonAdd}
-          >
-            {inCart ? "Quitar del carrito" : "Agregar al carrito"}
-          </button>
+          {showAddedMessage && inCart ? (
+            <div className={styles.addedMessage}>
+              Producto agregado al carrito
+            </div>
+          ) : (
+            <button
+              onClick={handleCartAction}
+              className={inCart ? styles.buttonRemove : styles.buttonAdd}
+            >
+              {inCart ? "Quitar del carrito" : "Agregar al carrito"}
+            </button>
+          )}
           <Link to="/" className={styles.continueLink}>
             Seguir comprando
           </Link>
