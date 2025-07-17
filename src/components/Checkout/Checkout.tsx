@@ -14,10 +14,7 @@ function Checkout() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    
-    /* await new Promise((resolve) => setTimeout(resolve, 1000)); */
-
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     if (name.trim() && address.trim() && email.trim()) {
       clearCart();
       setConfirmed(true);
@@ -52,17 +49,6 @@ function Checkout() {
     );
   }
 
-  if (cart.length === 0) {
-    return (
-      <div className={styles.emptyCart}>
-        <p>Tu carrito está vacío</p>
-        <Link to="/" className={styles.continueShopping}>
-          Continuar comprando
-        </Link>
-      </div>
-    );
-  }
-
   return (
     <div className={styles.checkoutContainer}>
       <div className={styles.cartSummary}>
@@ -83,7 +69,9 @@ function Checkout() {
           <span>Total:</span>
           <span className={styles.totalAmount}>${total.toFixed(2)}</span>
         </div>
-          <Link to="/" className={styles.link}>Continuar comprando</Link>
+        <Link to="/" className={styles.link}>
+          Continuar comprando
+        </Link>
       </div>
 
       <div className={styles.checkoutForm}>
