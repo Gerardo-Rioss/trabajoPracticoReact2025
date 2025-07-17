@@ -1,7 +1,7 @@
 import SearchBar from "../SearchBar/SearchBar";
 import NavMenu from "../NavMenu/NavMenu";
 import styles from "./headerContent.module.css";
-
+import { Link } from "react-router";
 
 type NavHeaderProps={
   setSearch: (searchValue:string)=>void,
@@ -13,11 +13,13 @@ export const NavHeader = (props: NavHeaderProps) => {
   return (
     <nav className={styles.navHeader}>
       <div className={styles.navLeftTopArea}>
+        <Link to="/">
         <img
           className={styles.logoImagen}
           src={"LogoMercadoLibre.jpg"}
           alt=""
         />
+        </Link>
       </div>
       <div className={styles.navCenterTopArea}>
         <SearchBar setSearch={setSearch} search={search}/>

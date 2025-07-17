@@ -15,9 +15,19 @@ const SideBarContent = ({
   setPriceFilter,
   categories,
 }: SideBarContentProps) => {
+ 
+  const hasFilters = selectedCategory || priceFilter;
+
+  const clearFilters = () => {
+    setSelectedCategory("");
+    setPriceFilter("");
+  };
+
   return (
     <div className={styles.container}>
-      <h3 className={styles.sectionTitle}>Filtrar productos</h3>
+      <div className={styles.header}>
+        <h3 className={styles.sectionTitle}>Filtrar productos</h3>
+      </div>
 
       <div className={styles.filterSection}>
         <h4 className={styles.filterTitle}>Categorías</h4>
@@ -55,13 +65,18 @@ const SideBarContent = ({
                 checked={priceFilter === option.value}
                 onChange={() => setPriceFilter(option.value)}
                 className={styles.radioInput}
-              />
+                />
               <span className={styles.customRadio}></span>
               {option.label}
             </label>
           ))}
         </div>
       </div>
+      {hasFilters && (
+        <button onClick={clearFilters} className={styles.clearButton}>
+          Limpiar filtros
+        </button>
+      )}
     </div>
   );
 };
