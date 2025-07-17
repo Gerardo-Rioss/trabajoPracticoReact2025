@@ -1,4 +1,3 @@
-/* FooterContent.module.css */
 .footerContainer {
   background-color: #2d3748;
   color: #f7fafc;
@@ -47,7 +46,6 @@
   margin: 0;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .footerContent {
     grid-template-columns: 1fr;
