@@ -201,3 +201,10 @@
   color: #4338ca;
   background-color: #f8fafc;
 }
+.confirmationTotal{
+  font-size: 1.1rem;
+  margin: 1rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}

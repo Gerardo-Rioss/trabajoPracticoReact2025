@@ -8,6 +8,7 @@ function Checkout() {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
+  const [totalCheck, setTotalCheck]= useState(0)
   const [confirmed, setConfirmed] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -16,6 +17,7 @@ function Checkout() {
     setIsSubmitting(true);
     await new Promise((resolve) => setTimeout(resolve, 1000));
     if (name.trim() && address.trim() && email.trim()) {
+      setTotalCheck(total)      
       clearCart();
       setConfirmed(true);
     }
@@ -36,6 +38,7 @@ function Checkout() {
             <p>
               <strong>Correo electrónico:</strong> {email}
             </p>
+          <p className={styles.confirmationTotal}>Total pagado: <strong>${totalCheck.toFixed(2)}</strong> </p>
             <p>
               Te hemos enviado un correo de confirmación con los detalles de tu
               pedido.
