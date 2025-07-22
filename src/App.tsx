@@ -8,7 +8,17 @@ import Cart from "./components/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
 import NotFound from "./components/NotFound/NotFound";
 import { PRODUCT_CATEGORIES } from "./constants/categories";
-import { PRODUCTS_DATA } from "./constants/products";
+/* import { PRODUCTS_DATA } from "./constants/products"; */
+import {
+  useQuery,
+} from "@tanstack/react-query";
+import axios from "axios";
+
+const API = "https://fakestoreapi.com";
+const fetchProducts = async () => {
+  const response = await axios.get(API + "/products");
+  return response.data;
+};
 
 function App() {
   //Estados
@@ -16,58 +26,82 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [priceFilter, setPriceFilter] = useState("");
 
-  // Filtrar listado por búsqueda, categoría o precio
-  const filteredList = PRODUCTS_DATA.map((list) => ({
-    ...list,
-    products: list.products.filter((product) => {
-      const filteredByName = product.name
-        .toLowerCase()
-        .includes(search.toLowerCase());
-      const filteredByCategory =
-        selectedCategory === "" || product.category === selectedCategory;
-      let filteredByPrice = true;
-      if (priceFilter === "Hasta $500") filteredByPrice = product.price < 500;
-      else if (priceFilter === "$500 a $1.000")
-        filteredByPrice = product.price >= 500 && product.price <= 1000;
-      else if (priceFilter === "Mas de $1.000")
-        filteredByPrice = product.price > 1000;
-      return filteredByName && filteredByCategory && filteredByPrice;
-    }),
-  })).filter((list) => list.products.length > 0);
+  const {
+    data: products = [],
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["products"],
+    queryFn: fetchProducts,
+  });
+  if (isLoading) return <div>Cargando productos...</div>;
+  if (error) return <div>Error al cargar productos</div>;
+
+  
+  const filteredProducts = products.filter((product: any) => {
+    const filteredByName = product.title
+      .toLowerCase()
+      .includes(search.toLowerCase());
+    const filteredByCategory =
+      selectedCategory === "" || product.category === selectedCategory;
+    let filteredByPrice = true;
+    if (priceFilter === "Hasta $500") filteredByPrice = product.price < 500;
+    else if (priceFilter === "$500 a $1.000")
+      filteredByPrice = product.price >= 500 && product.price <= 1000;
+    else if (priceFilter === "Mas de $1.000")
+      filteredByPrice = product.price > 1000;
+    return filteredByName && filteredByCategory && filteredByPrice;
+  });
+
+  const filteredList = PRODUCT_CATEGORIES.map((cat) => ({
+    title: cat,
+    products: filteredProducts
+      .filter((p: any) => p.category === cat)
+      .map((p: any) => ({
+        id: p.id,
+        name: p.title,
+        description: p.description,
+        price: p.price,
+        image: p.image,
+        category: p.category,
+        quantity: p.quantity ?? 1,
+      })),
+  })).filter((group) => group.products.length > 0);
+  console.log(filteredList)
 
   return (
-    <CartProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            element={
-              <Layout
-                setSearch={setSearch}
-                search={search}
-                selectedCategory={selectedCategory}
-                setSelectedCategory={setSelectedCategory}
-                priceFilter={priceFilter}
-                setPriceFilter={setPriceFilter}
-                categories={PRODUCT_CATEGORIES}
-              />
-            }
-          >
+      <CartProvider>
+        <BrowserRouter>
+          <Routes>
             <Route
-              path="/"
-              element={<Home filteredList={filteredList} />}
-            ></Route>
-            <Route
-              path="/product/:id"
-              element={<ProductDetail lists={filteredList} />}
-            ></Route>
-            <Route path="/cart" element={<Cart />}></Route>
-            <Route path="/checkout" element={<Checkout />}></Route>
-            <Route path="/404" element={<NotFound />}></Route>
-            <Route path="*" element={<NotFound />}></Route>
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </CartProvider>
+              element={
+                <Layout
+                  setSearch={setSearch}
+                  search={search}
+                  selectedCategory={selectedCategory}
+                  setSelectedCategory={setSelectedCategory}
+                  priceFilter={priceFilter}
+                  setPriceFilter={setPriceFilter}
+                  categories={PRODUCT_CATEGORIES}
+                />
+              }
+            >
+              <Route
+                path="/"
+                element={<Home filteredList={filteredList} />}
+              ></Route>
+              <Route
+                path="/product/:id"
+                element={<ProductDetail lists={filteredList} />}
+              ></Route>
+              <Route path="/cart" element={<Cart />}></Route>
+              <Route path="/checkout" element={<Checkout />}></Route>
+              <Route path="/404" element={<NotFound />}></Route>
+              <Route path="*" element={<NotFound />}></Route>
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
   );
 }
 export default App;
