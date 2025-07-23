@@ -3,53 +3,25 @@ import ProductCard from "../ProductCard/ProductCard";
 import styles from "../Main/MainContent.module.css";
 import type { Product } from "../../types/Product";
 
-type MainContentProps = {
-  listProducts: Product[];
-  isLoading?: boolean;
-  error?: string | null;
-};
+type MainContentProps = {listProducts: Product[]};
 
-export default function MainContent({
-  listProducts,
-  isLoading,
-  error,
-}: MainContentProps) {
-  if (error) {
-    return (
-      <div className={styles.errorContainer}>
-        <h2 className={styles.errorTitle}>Error loading products</h2>
-        <p className={styles.errorMessage}>{error}</p>
-      </div>
-    );
-  }
-
-  if (isLoading) {
-    return (
-      <div className={styles.loadingContainer}>
-        <div className={styles.loadingSpinner}></div>
-        <p>Loading products...</p>
-      </div>
-    );
-  }
-
-  if (listProducts.length === 0) {
-    return (
-      <div className={styles.emptyContainer}>
+function MainContent({listProducts}: MainContentProps) {
+  return listProducts.length===0 ?(
+    <div className={styles.emptyContainer}>
         <h2 className={styles.emptyTitle}>No se encontraron productos</h2>
         <p className={styles.emptyMessage}>
           Intente ajustar su búsqueda o filtros
         </p>
       </div>
-    );
-  }
-
-  return (
-    <main className={styles.container}>
+    ):(
+      <main className={styles.container}>
       <ProductListComponent title={"Titulo de seccion"}>
         {listProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </ProductListComponent>
     </main>
-  );
+    )
+  
 }
+export default MainContent;

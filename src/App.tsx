@@ -9,14 +9,8 @@ import Checkout from "./components/Checkout/Checkout";
 import NotFound from "./components/NotFound/NotFound";
 import type { Product } from "./types/Product";
 import { useQuery} from "@tanstack/react-query";
-import axios from "axios";
+import {getProducts} from "./components/Api/products"
 
-const API = "https://fakestoreapi.com";
-
-const fetchProducts = async () => {
-  const response = await axios.get(API + "/products");
-  return response.data;
-};
 
 function App() {
   //Estados
@@ -24,9 +18,9 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [priceFilter, setPriceFilter] = useState("");
 
-  const { data: products =[], isLoading, error,} = useQuery({
+  const { data: products =[], isLoading, error,} = useQuery<Product[]>({
     queryKey: ["products"],
-    queryFn: fetchProducts,
+    queryFn: getProducts,
   });
   if (isLoading) return <div>Cargando productos...</div>;
   if (error) return <div>Error al cargar productos</div>;
@@ -52,8 +46,9 @@ function App() {
     const uniqueCategories = [...new Set(categories)]
     return uniqueCategories
   }
-
   const CATEGORIES = getCategories(products)
+
+
   return (
     <CartProvider>
       <BrowserRouter>
@@ -75,10 +70,10 @@ function App() {
               path="/"
               element={<Home listProducts={filteredProducts} />}
             ></Route>
-            {/* <Route
+            {<Route
               path="/product/:id"
               element={<ProductDetail listProducts={filteredProducts} />}
-            ></Route> */}
+            ></Route>}
             <Route path="/cart" element={<Cart />}></Route>
             <Route path="/checkout" element={<Checkout />}></Route>
             <Route path="/404" element={<NotFound />}></Route>

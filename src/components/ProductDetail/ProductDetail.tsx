@@ -1,21 +1,20 @@
-import type { ProductList } from "../../types/ProductList";
+/* import type { ProductList } from "../../types/ProductList"; */
+import type { Product } from "../../types/Product";
 import styles from "./ProductDetail.module.css";
 import { useCart } from "../../context/CartContext";
 import { useParams } from "react-router";
 import { Link } from "react-router";
 type ProductDetailProps = {
-  lists: ProductList[];
+  listProducts: Product[];
 };
 
 function ProductDetail(props: ProductDetailProps) {
-  const { lists } = props;
+  const { listProducts } = props;
   const { id } = useParams<{ id: string }>();
   const { addToCart, isInCart } = useCart();
 
   const productId = Number(id);
-  const product = lists
-    .flatMap((list) => list.products)
-    .find((p) => p.id === productId);
+  const product = listProducts.find((p) => p.id === productId);
     
   if (!product) {
     return (
@@ -33,13 +32,13 @@ function ProductDetail(props: ProductDetailProps) {
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
-        <img src={product.image} alt={product.name} className={styles.image} />
+        <img src={product.image} alt={product.title} className={styles.image} />
       </div>
 
       <div className={styles.content}>
         <div className={styles.header}>
           <span className={styles.category}>{product.category}</span>
-          <h1 className={styles.name}>{product.name}</h1>
+          <h1 className={styles.name}>{product.title}</h1>
           <span className={styles.id}>#{product.id}</span>
         </div>
         <p className={styles.description}>{product.description}</p>
