@@ -7,14 +7,12 @@ import { CartProvider } from "./context/CartContext";
 import Cart from "./components/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
 import NotFound from "./components/NotFound/NotFound";
-import { PRODUCT_CATEGORIES } from "./constants/categories";
-/* import { PRODUCTS_DATA } from "./constants/products"; */
-import {
-  useQuery,
-} from "@tanstack/react-query";
+import type { Product } from "./types/Product";
+import { useQuery} from "@tanstack/react-query";
 import axios from "axios";
 
 const API = "https://fakestoreapi.com";
+
 const fetchProducts = async () => {
   const response = await axios.get(API + "/products");
   return response.data;
@@ -26,11 +24,7 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [priceFilter, setPriceFilter] = useState("");
 
-  const {
-    data: products = [],
-    isLoading,
-    error,
-  } = useQuery({
+  const { data: products =[], isLoading, error,} = useQuery({
     queryKey: ["products"],
     queryFn: fetchProducts,
   });
@@ -38,7 +32,7 @@ function App() {
   if (error) return <div>Error al cargar productos</div>;
 
   
-  const filteredProducts = products.filter((product: any) => {
+  const filteredProducts = products.filter((product: Product) => {
     const filteredByName = product.title
       .toLowerCase()
       .includes(search.toLowerCase());
@@ -53,55 +47,46 @@ function App() {
     return filteredByName && filteredByCategory && filteredByPrice;
   });
 
-  const filteredList = PRODUCT_CATEGORIES.map((cat) => ({
-    title: cat,
-    products: filteredProducts
-      .filter((p: any) => p.category === cat)
-      .map((p: any) => ({
-        id: p.id,
-        name: p.title,
-        description: p.description,
-        price: p.price,
-        image: p.image,
-        category: p.category,
-        quantity: p.quantity ?? 1,
-      })),
-  })).filter((group) => group.products.length > 0);
-  console.log(filteredList)
+  function getCategories (products:Product[]){
+    const categories = products.map((product)=>product.category)
+    const uniqueCategories = [...new Set(categories)]
+    return uniqueCategories
+  }
 
+  const CATEGORIES = getCategories(products)
   return (
-      <CartProvider>
-        <BrowserRouter>
-          <Routes>
+    <CartProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            element={
+              <Layout
+                setSearch={setSearch}
+                search={search}
+                selectedCategory={selectedCategory}
+                setSelectedCategory={setSelectedCategory}
+                priceFilter={priceFilter}
+                setPriceFilter={setPriceFilter}
+                categories={CATEGORIES}
+              />
+            }
+          >
             <Route
-              element={
-                <Layout
-                  setSearch={setSearch}
-                  search={search}
-                  selectedCategory={selectedCategory}
-                  setSelectedCategory={setSelectedCategory}
-                  priceFilter={priceFilter}
-                  setPriceFilter={setPriceFilter}
-                  categories={PRODUCT_CATEGORIES}
-                />
-              }
-            >
-              <Route
-                path="/"
-                element={<Home filteredList={filteredList} />}
-              ></Route>
-              <Route
-                path="/product/:id"
-                element={<ProductDetail lists={filteredList} />}
-              ></Route>
-              <Route path="/cart" element={<Cart />}></Route>
-              <Route path="/checkout" element={<Checkout />}></Route>
-              <Route path="/404" element={<NotFound />}></Route>
-              <Route path="*" element={<NotFound />}></Route>
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </CartProvider>
+              path="/"
+              element={<Home listProducts={filteredProducts} />}
+            ></Route>
+            {/* <Route
+              path="/product/:id"
+              element={<ProductDetail listProducts={filteredProducts} />}
+            ></Route> */}
+            <Route path="/cart" element={<Cart />}></Route>
+            <Route path="/checkout" element={<Checkout />}></Route>
+            <Route path="/404" element={<NotFound />}></Route>
+            <Route path="*" element={<NotFound />}></Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 export default App;

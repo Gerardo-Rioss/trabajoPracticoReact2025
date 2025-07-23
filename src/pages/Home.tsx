@@ -1,16 +1,16 @@
 import MainContent from "../components/Main/MainContent"
-import type { ProductList } from "../types/ProductList";
+import type { Product} from "../types/Product"
+
+
 type HomeProps = {
-    filteredList: ProductList[];
-  };
+  listProducts: Product[];
+};
 
 function Home(props: HomeProps) {
-  const { filteredList  } = props;
+  const { listProducts } = props;
   return (
     <>
-      <MainContent
-        lists={filteredList}
-      />
+      <MainContent listProducts={listProducts} />
     </>
   );
 }

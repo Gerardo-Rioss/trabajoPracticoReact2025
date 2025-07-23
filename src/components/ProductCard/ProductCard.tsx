@@ -13,13 +13,13 @@ function ProductCard({ product }: ProductCardProps) {
         <div className={styles.imageContainer}>
           <img
             src={product.image}
-            alt={product.name}
+            alt={product.image}
             className={styles.image}
             loading="lazy"
           />
         </div>
         <div className={styles.cardContent}>
-          <h3 className={styles.name}>{product.name}</h3>
+          <h3 className={styles.name}>{product.title}</h3>
           <p className={styles.price}>${product.price.toFixed(2)}</p>
         </div>
       </div>

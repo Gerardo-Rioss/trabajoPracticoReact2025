@@ -1,17 +1,16 @@
 import ProductListComponent from "../ProductList/ProductList";
 import ProductCard from "../ProductCard/ProductCard";
 import styles from "../Main/MainContent.module.css";
-import type { ProductList } from "../../types/ProductList";
-/* import type { Product } from "../../types/Product"; */
+import type { Product } from "../../types/Product";
 
 type MainContentProps = {
-  lists: ProductList[];
+  listProducts: Product[];
   isLoading?: boolean;
   error?: string | null;
 };
 
 export default function MainContent({
-  lists,
+  listProducts,
   isLoading,
   error,
 }: MainContentProps) {
@@ -33,7 +32,7 @@ export default function MainContent({
     );
   }
 
-  if (lists.length === 0) {
+  if (listProducts.length === 0) {
     return (
       <div className={styles.emptyContainer}>
         <h2 className={styles.emptyTitle}>No se encontraron productos</h2>
@@ -46,13 +45,11 @@ export default function MainContent({
 
   return (
     <main className={styles.container}>
-      {lists.map((list) => (
-        <ProductListComponent key={list.title} title={list.title}>
-          {list.products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </ProductListComponent>
-      ))}
+      <ProductListComponent title={"Titulo de seccion"}>
+        {listProducts.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </ProductListComponent>
     </main>
   );
 }
