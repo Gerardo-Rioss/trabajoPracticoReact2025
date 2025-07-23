@@ -1,5 +1,5 @@
 import axios from "axios"
-import type { Product } from "../../types/Product";
+import type { Product } from "../types/Product";
 const API_BASE_URL ="https://fakestoreapi.com";
 
 //obtener todos los productos

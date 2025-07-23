@@ -9,7 +9,7 @@ import Checkout from "./components/Checkout/Checkout";
 import NotFound from "./components/NotFound/NotFound";
 import type { Product } from "./types/Product";
 import { useQuery} from "@tanstack/react-query";
-import {getProducts} from "./components/Services/products"
+import {getProducts} from "./services/products"
 
 
 function App() {
@@ -66,13 +66,9 @@ function App() {
               />
             }
           >
-            <Route
-              path="/"
-              element={<Home listProducts={filteredProducts} />}
+            <Route path="/" element={<Home listProducts={filteredProducts} />}
             ></Route>
-            <Route
-              path="/product/:id"
-              element={<ProductDetail/>}
+            <Route path="/product/:id" element={<ProductDetail/>}
             ></Route>
             <Route path="/cart" element={<Cart />}></Route>
             <Route path="/checkout" element={<Checkout />}></Route>

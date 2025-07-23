@@ -4,7 +4,7 @@ import { useCart } from "../../context/CartContext";
 import { useParams } from "react-router";
 import { Link } from "react-router";
 import { useQuery } from "@tanstack/react-query";
-import { getProductById } from "../Services/products";
+import { getProductById } from "../../services/products";
 
 function ProductDetail() {
   const { id } = useParams<{ id: string }>();
