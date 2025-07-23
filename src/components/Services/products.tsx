@@ -10,6 +10,6 @@ export const getProducts = async ():Promise<Product[]>=>{
 
 // obtener el producto por su id
 export const getProductById =  async (productId:number)=>{
-    const {data} = await axios.get(`${API_BASE_URL}/products/${productId}`)
-    return data;
+    const response = await axios.get(`${API_BASE_URL}/products/${productId}`)
+    return response.data;
 }

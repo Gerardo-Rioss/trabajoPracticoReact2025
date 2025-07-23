@@ -8,16 +8,10 @@ type SideBarContentProps = {
   categories: string[];
 };
 
-const SideBarContent = ({
-  selectedCategory,
-  setSelectedCategory,
-  priceFilter,
-  setPriceFilter,
-  categories,
-}: SideBarContentProps) => {
+const SideBarContent = (
+  {selectedCategory,setSelectedCategory,priceFilter,setPriceFilter,categories}: SideBarContentProps) => {
  
   const hasFilters = selectedCategory || priceFilter;
-
   const clearFilters = () => {
     setSelectedCategory("");
     setPriceFilter("");

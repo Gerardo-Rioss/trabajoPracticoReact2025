@@ -1,20 +1,21 @@
-/* import type { ProductList } from "../../types/ProductList"; */
 import type { Product } from "../../types/Product";
 import styles from "./ProductDetail.module.css";
 import { useCart } from "../../context/CartContext";
 import { useParams } from "react-router";
 import { Link } from "react-router";
-type ProductDetailProps = {
-  listProducts: Product[];
-};
+import { useQuery } from "@tanstack/react-query";
+import { getProductById } from "../Services/products";
 
-function ProductDetail(props: ProductDetailProps) {
-  const { listProducts } = props;
+function ProductDetail() {
   const { id } = useParams<{ id: string }>();
   const { addToCart, isInCart } = useCart();
 
-  const productId = Number(id);
-  const product = listProducts.find((p) => p.id === productId);
+  const { data: product , isLoading, error,} = useQuery<Product>({
+    queryKey: ["product",id],
+    queryFn:()=> getProductById(Number(id)),
+  });
+  if (isLoading) return <div>Cargando productos...</div>;
+  if (error) return <div>Error al cargar productos</div>;
     
   if (!product) {
     return (
@@ -28,7 +29,6 @@ function ProductDetail(props: ProductDetailProps) {
   }
 
   const inCart = isInCart(product.id);
-
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
