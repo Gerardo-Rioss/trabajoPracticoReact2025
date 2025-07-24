@@ -1,8 +1,8 @@
 import SearchBar from "./SearchBar/SearchBar";
-import NavCart from "./NavCart/NavCart";
+/* import NavCart from "./NavCart/NavCart"; */
 import styles from "./header.module.css";
 import { Link } from "react-router";
-
+import IconButtonWithBadge from "../../MaterialComponent/CartBadge/CartBadge";
 type NavHeaderProps = {
   setSearch: (searchValue: string) => void;
   search: string;
@@ -25,7 +25,8 @@ export const NavHeader = (props: NavHeaderProps) => {
         <SearchBar setSearch={setSearch} search={search} />
       </div>
       <div className={styles.navRigthArea}>
-        <NavCart />
+        {/* <NavCart /> */}
+        <IconButtonWithBadge></IconButtonWithBadge>
       </div>
     </nav>
   );
