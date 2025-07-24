@@ -1,6 +1,6 @@
 import ProductListComponent from "../ProductList/ProductList";
 import ProductCard from "../ProductCard/ProductCard";
-import styles from "../Main/MainContent.module.css";
+import styles from "./MainContent.module.css";
 import type { Product } from "../../types/Product";
 
 type MainContentProps = {listProducts: Product[]};

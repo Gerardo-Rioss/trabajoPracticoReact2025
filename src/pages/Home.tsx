@@ -1,4 +1,4 @@
-import MainContent from "../components/Main/MainContent"
+import MainContent from "../components/MainContent/MainContent"
 import type { Product} from "../types/Product"
 
 

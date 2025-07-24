@@ -1,53 +1,28 @@
 .navHeader {
-    display: grid;
-    grid-template-areas:
-        "nav-left-top nav-center-top nav-right-top"
-        "nav-left-bottom nav-center-bottom nav-right-bottom";
-    grid-template-columns: 162px minmax(340px, 588px) minmax(350px, 390px);
-    grid-template-rows: 40px 28px;
-    grid-column-gap: 20px;
-    justify-content: center;
-    padding: 8px 10px 12px 10px;
-    grid-row-gap: 12px;
-    background-color: #ffe600;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.10);
-    font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto,
-        Arial, sans-serif;
+  display: grid;
+  grid-template-areas: "nav-left nav-center nav-right";
+  grid-template-columns: 162px minmax(340px, 588px) minmax(350px, 390px);
+  grid-template-rows: 40px;
+  grid-column-gap: 20px;
+  justify-content: center;
+  padding: 8px 10px 12px 10px;
+  grid-row-gap: 12px;
+  background-color: #ffe600;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.1);
+  font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto,
+    Arial, sans-serif;
 }
-
-/* nav Left Top Area */
-.navLeftTopArea {
-    grid-area: nav-left-top;
+.navLeftArea {
+  grid-area: nav-left;
 }
 .logoImagen {
-    position: relative;
-    width: 150px;
-    object-fit: cover;
+  position: relative;
+  width: 150px;
+  object-fit: cover;
 }
-
-/* nav Center Top Area */
-.navCenterTopArea {
-    grid-area: nav-center-top;
+.navCenterArea {
+  grid-area: nav-center;
 }
-
-/* nav Rigth Bottom Area */
-.navRigthBottomArea {
-    grid-area: nav-right-bottom;
-}
-
-/* nav Center Bottom Area */
-.navCenterBottomArea{
-  grid-area: nav-center-bottom;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-
-/* nav right top */
-.navRightTopArea{
-  grid-area: nav-right-top;
-}
-
-.imgNavRightTop{
-  width: 100%;
+.navRightArea {
+  grid-area: nav-right;
 }

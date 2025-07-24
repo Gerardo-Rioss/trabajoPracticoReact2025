@@ -1,9 +1,9 @@
-import styles from "./NavMenu.module.css";
+import styles from "./NavCart.module.css";
 import { Link } from "react-router";
 import { useCart } from "../../../context/CartContext";
-import { FaShoppingCart } from "react-icons/fa"; 
+import { FaShoppingCart } from "react-icons/fa";
 
-export const NavMenu = () => {
+export const NavCart = () => {
   const { cart } = useCart();
   const itemCount = cart.length;
 
@@ -25,4 +25,4 @@ export const NavMenu = () => {
   );
 };
 
-export default NavMenu;
+export default NavCart;
