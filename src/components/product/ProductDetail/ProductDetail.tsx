@@ -1,10 +1,10 @@
-import type { Product } from "../../types/Product";
+import type { Product } from "../../../types/Product";
 import styles from "./ProductDetail.module.css";
-import { useCart } from "../../context/CartContext";
+import { useCart } from "../../../context/CartContext";
 import { useParams } from "react-router";
 import { Link } from "react-router";
 import { useQuery } from "@tanstack/react-query";
-import { getProductById } from "../../services/products";
+import { getProductById } from "../../../services/products";
 
 function ProductDetail() {
   const { id } = useParams<{ id: string }>();

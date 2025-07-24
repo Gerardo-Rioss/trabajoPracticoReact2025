@@ -1,5 +1,5 @@
 import styles from "./ProductCard.module.css";
-import type { Product } from "../../types/Product";
+import type { Product } from "../../../types/Product";
 import { Link } from "react-router";
 
 type ProductCardProps = {

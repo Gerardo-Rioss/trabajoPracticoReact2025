@@ -2,14 +2,13 @@ import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home";
-import ProductDetail from "./components/ProductDetail/ProductDetail";
+import ProductDetail from "./components/product/ProductDetail/ProductDetail";
 import { CartProvider } from "./context/CartContext";
-import Cart from "./components/Cart/Cart";
-import Checkout from "./components/Checkout/Checkout";
-import NotFound from "./components/NotFound/NotFound";
-import type { Product } from "./types/Product";
-import { useQuery} from "@tanstack/react-query";
-import {getProducts} from "./services/products"
+import Cart from "./components/features/Cart/Cart";
+import Checkout from "./components/features/Checkout/Checkout";
+import NotFound from "./components/features/NotFound/NotFound";
+import { useProducts } from "./hooks/useProducts";
+import { filterProducts, getCategories } from "./utils/filters";
 
 
 function App() {
@@ -17,38 +16,16 @@ function App() {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [priceFilter, setPriceFilter] = useState("");
-
-  const { data: products =[], isLoading, error,} = useQuery<Product[]>({
-    queryKey: ["products"],
-    queryFn: getProducts,
-  });
+//Fetch para obtener todos los productos en un customhook
+  const {data:products=[],isLoading,error}= useProducts();
   if (isLoading) return <div>Cargando productos...</div>;
   if (error) return <div>Error al cargar productos</div>;
-
+// aplica los filtros
+const filteredProducts = filterProducts(products,search,selectedCategory,priceFilter);
+//obtengo todas las categorias de los product
+const CATEGORIES = getCategories(products);
   
-  const filteredProducts = products.filter((product: Product) => {
-    const filteredByName = product.title
-      .toLowerCase()
-      .includes(search.toLowerCase());
-    const filteredByCategory =
-      selectedCategory === "" || product.category === selectedCategory;
-    let filteredByPrice = true;
-    if (priceFilter === "Hasta $500") filteredByPrice = product.price < 500;
-    else if (priceFilter === "$500 a $1.000")
-      filteredByPrice = product.price >= 500 && product.price <= 1000;
-    else if (priceFilter === "Mas de $1.000")
-      filteredByPrice = product.price > 1000;
-    return filteredByName && filteredByCategory && filteredByPrice;
-  });
-
-  function getCategories (products:Product[]){
-    const categories = products.map((product)=>product.category)
-    const uniqueCategories = [...new Set(categories)]
-    return uniqueCategories
-  }
-  const CATEGORIES = getCategories(products)
-
-
+  
   return (
     <CartProvider>
       <BrowserRouter>

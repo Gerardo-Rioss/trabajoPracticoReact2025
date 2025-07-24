@@ -1,6 +1,6 @@
 import styles from "./NavCart.module.css";
 import { Link } from "react-router";
-import { useCart } from "../../../context/CartContext";
+import { useCart } from "../../../../context/CartContext";
 import { FaShoppingCart } from "react-icons/fa";
 
 export const NavCart = () => {

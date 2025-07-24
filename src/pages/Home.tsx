@@ -1,6 +1,5 @@
-import MainContent from "../components/MainContent/MainContent"
-import type { Product} from "../types/Product"
-
+import MainContent from "../components/features/MainContent/MainContent";
+import type { Product } from "../types/Product";
 
 type HomeProps = {
   listProducts: Product[];

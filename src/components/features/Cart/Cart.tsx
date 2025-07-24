@@ -1,6 +1,7 @@
-import { useCart } from "../../context/CartContext";
+import { useCart } from "../../../context/CartContext";
 import styles from "./Cart.module.css";
 import { Link } from "react-router";
+import type { CartProduct } from "../../../types/CartContext";
 
 function Cart() {
   const {
@@ -26,23 +27,24 @@ function Cart() {
       ) : (
         <>
           <div className={styles.cartContent}>
-            {cart.map((product) => (
+            {cart.map((product: CartProduct) => (
+              
               <div key={product.id} className={styles.cartItem}>
                 <div className={styles.imageContainer}>
                   <img
                     src={product.image}
-                    alt={product.name}
+                    alt={product.title}
                     className={styles.image}
                   />
                 </div>
 
                 <div className={styles.itemDetails}>
                   <div className={styles.itemHeader}>
-                    <h3 className={styles.name}>{product.name}</h3>
+                    <h3 className={styles.name}>{product.title}</h3>
                     <button
                       onClick={() => removeFromCart(product.id)}
                       className={styles.buttonRemove}
-                      aria-label={`Quitar ${product.name} del carrito`}
+                      aria-label={`Quitar ${product.title} del carrito`}
                     >
                       ×
                     </button>

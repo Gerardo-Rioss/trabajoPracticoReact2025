@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useCart } from "../../context/CartContext";
+import { useCart } from "../../../context/CartContext";
 import { Link } from "react-router";
 import styles from "./Checkout.module.css";
 

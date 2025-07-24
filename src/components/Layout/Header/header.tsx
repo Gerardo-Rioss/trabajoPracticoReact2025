@@ -1,6 +1,6 @@
-import SearchBar from "../SearchBar/SearchBar";
-import NavCart from "../NavCart/NavCart";
-import styles from "./headerContent.module.css";
+import SearchBar from "./SearchBar/SearchBar";
+import NavCart from "./NavCart/NavCart";
+import styles from "./header.module.css";
 import { Link } from "react-router";
 
 type NavHeaderProps = {
