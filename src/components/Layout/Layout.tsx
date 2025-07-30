@@ -1,7 +1,7 @@
 import { Outlet } from "react-router";
-import { NavHeader } from "./Header/header";
-import SideBarContent from "./SideBar/SideBarContent";
-import { FooterContent } from "./Footer/FooterContent";
+import { NavHeader } from "../Header/header";
+import SideBarContent from "../SideBar/SideBarContent";
+import { FooterContent } from "../Footer/FooterContent";
 import styles from "./Layout.module.css";
 
 type LayoutProps = {

@@ -10,12 +10,11 @@ function ProductDetail() {
   const { id } = useParams<{ id: string }>();
   const { addToCart, isInCart } = useCart();
 
-  const { data: product , isLoading, error,} = useQuery<Product>({
+  const { data: product , error,} = useQuery<Product>({
     queryKey: ["product",id],
     queryFn:()=> productService.getProductById(Number(id)),
   });
-  if (isLoading) return <div>Cargando productos...</div>;
-  if (error) return <div>Error al cargar productos</div>;
+  if (error) return <div>Error al buscar el producto</div>;
     
   if (!product) {
     return (

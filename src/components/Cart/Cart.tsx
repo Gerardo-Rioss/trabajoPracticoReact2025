@@ -1,7 +1,7 @@
-import { useCart } from "../../../context/CartContext";
+import { useCart } from "../../context/CartContext";
 import styles from "./Cart.module.css";
 import { Link } from "react-router";
-import type { CartProduct } from "../../../types/CartContext";
+import type { CartProduct } from "../../types/CartContext";
 
 function Cart() {
   const {

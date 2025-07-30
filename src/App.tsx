@@ -4,28 +4,30 @@ import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home";
 import ProductDetail from "./components/product/ProductDetail/ProductDetail";
 import { CartProvider } from "./context/CartContext";
-import Cart from "./components/features/Cart/Cart";
-import Checkout from "./components/features/Checkout/Checkout";
-import NotFound from "./components/features/NotFound/NotFound";
+import Cart from "./components/Cart/Cart";
+import Checkout from "./components/Checkout/Checkout";
+import NotFound from "./components/NotFound/NotFound";
 import { useProducts } from "./hooks/useProducts";
 import { filterProducts, getCategories } from "./utils/filters";
-
 
 function App() {
   //Estados
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [priceFilter, setPriceFilter] = useState("");
-//Fetch para obtener todos los productos en un customhook
-  const {data:products=[],isLoading,error}= useProducts();
-  if (isLoading) return <div>Cargando productos...</div>;
+  //Fetch para obtener todos los productos en un customhook
+  const { data: products = [], error } = useProducts();
   if (error) return <div>Error al cargar productos</div>;
-// aplica los filtros
-const filteredProducts = filterProducts(products,search,selectedCategory,priceFilter);
-//obtengo todas las categorias de los product
-const CATEGORIES = getCategories(products);
-  
-  
+  // aplica los filtros
+  const filteredProducts = filterProducts(
+    products,
+    search,
+    selectedCategory,
+    priceFilter
+  );
+  //obtengo todas las categorias de los product
+  const CATEGORIES = getCategories(products);
+
   return (
     <CartProvider>
       <BrowserRouter>
@@ -43,10 +45,11 @@ const CATEGORIES = getCategories(products);
               />
             }
           >
-            <Route path="/" element={<Home listProducts={filteredProducts} />}
+            <Route
+              path="/"
+              element={<Home listProducts={filteredProducts} />}
             ></Route>
-            <Route path="/product/:id" element={<ProductDetail/>}
-            ></Route>
+            <Route path="/product/:id" element={<ProductDetail />}></Route>
             <Route path="/cart" element={<Cart />}></Route>
             <Route path="/checkout" element={<Checkout />}></Route>
             <Route path="/404" element={<NotFound />}></Route>
