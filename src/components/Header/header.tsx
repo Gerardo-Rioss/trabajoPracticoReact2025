@@ -1,15 +1,20 @@
-import SearchBar from "./SearchBar/SearchBar";
-/* import NavCart from "./NavCart/NavCart"; */
 import styles from "./header.module.css";
-import { Link } from "react-router";
+import { Link, useSearchParams } from "react-router";
+import { updateSearchParam } from "../../utils/searchParams";
 import IconButtonWithBadge from "../MaterialComponent/IconButtonWithBadge/IconButtonWithBadge";
-type NavHeaderProps = {
-  setSearch: (searchValue: string) => void;
-  search: string;
-};
+import { FiSearch } from "react-icons/fi";
 
-export const NavHeader = (props: NavHeaderProps) => {
-  const { setSearch, search } = props;
+
+export const Header = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newParams = updateSearchParam(searchParams, "search", e.target.value);
+    setSearchParams(newParams);
+  };
+
+
+
   return (
     <nav className={styles.navHeader}>
       <div className={styles.navLeftArea}>
@@ -22,7 +27,21 @@ export const NavHeader = (props: NavHeaderProps) => {
         </Link>
       </div>
       <div className={styles.navCenterArea}>
-        <SearchBar setSearch={setSearch} search={search} />
+        {/* ///// */}
+        <div className={styles.search}>
+          <input
+            className={styles.inputSearch}
+            type="text"
+            placeholder="Buscar productos, marcas y más..."
+            value={searchParams.get("search") || ""}
+            onChange={handleSearchChange}
+          />
+          {/* <div className={styles.searchDivider}></div>
+          <button className={styles.buttonSearch} type="submit">
+            <FiSearch className={styles.searchIcon} />
+          </button> */}
+        </div>
+        {/* ///// */}
       </div>
       <div className={styles.navRigthArea}>
         <IconButtonWithBadge></IconButtonWithBadge>

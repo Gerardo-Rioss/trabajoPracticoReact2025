@@ -8,3 +8,10 @@ export function useProducts(){
         queryFn: productService.getProducts
     })
 }
+
+export const useCategories = () => {
+  return useQuery({
+    queryKey: ["categories"],
+    queryFn: productService.getCategories,
+  });
+};

@@ -1,42 +1,23 @@
 import { Outlet } from "react-router";
-import { NavHeader } from "../Header/header";
-import SideBarContent from "../SideBar/SideBarContent";
+import SideBar from "../SideBar/SideBar";
 import { FooterContent } from "../Footer/FooterContent";
 import styles from "./Layout.module.css";
+import { Header } from "../Header/header";
 
-type LayoutProps = {
-  setSearch: (searchValue: string) => void;
-  search: string;
-  selectedCategory: string;
-  setSelectedCategory: (v: string) => void;
-  priceFilter: string;
-  setPriceFilter: (v: string) => void;
-  categories: string[];
-};
 
-function Layout(props:LayoutProps) {
-  const {setSearch,search,selectedCategory,
-    setSelectedCategory,
-    priceFilter,
-    setPriceFilter,
-    categories,} = props
+function Layout() {
+  
   return (
     <>
       <div className={styles.appContainer}>
         <div className={styles.header}>
-          <NavHeader setSearch={setSearch} search={search} />
+          <Header/>
         </div>
         <div className={styles.mainContent}>
           <Outlet />
         </div>
         <div className={styles.sideBar}>
-          <SideBarContent
-            categories={categories}
-            selectedCategory={selectedCategory}
-            setSelectedCategory={setSelectedCategory}
-            priceFilter={priceFilter}
-            setPriceFilter={setPriceFilter}
-          />
+          <SideBar/>
         </div>
         <div className={styles.footer}>
           <FooterContent />
