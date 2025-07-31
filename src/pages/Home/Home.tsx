@@ -3,7 +3,6 @@ import { useProductFilters } from "../../hooks/useProductFilters";
 import styles from "./Home.module.css"
 import ProductList from "../../components/product/ProductList/ProductList";
 import ProductCard from "../../components/product/ProductCard/ProductCard";
-import { Header } from "../../components/Header/header";
 
 function Home() {
   
@@ -20,7 +19,6 @@ function Home() {
    </div>
  ) : (
    <main className={styles.container}>
-    <Header/>
      <ProductList title={"Titulo de seccion"}>
        {filteredProducts.map((product) => (
          <ProductCard key={product.id} product={product} />

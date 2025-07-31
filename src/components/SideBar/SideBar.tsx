@@ -1,12 +1,14 @@
 import styles from "./SideBar.module.css";
 import { useSearchParams } from "react-router";
-import { useCategories } from "../../hooks/useProducts";
-import { updateCategoryFilter,updateSearchParam } from "../../utils/searchParams";
-const SideBarContent = () => {
-  
+import { useCategories } from "../../hooks/useCategories";
+import {
+  updateCategoryFilter,
+  updateSearchParam,
+} from "../../utils/searchParams";
+const SideBar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const { data: categories } = useCategories();
- 
+  
   const handleCategoryChange = (category: string, checked: boolean) => {
     const newParams = updateCategoryFilter(searchParams, category, checked);
     setSearchParams(newParams);
@@ -25,7 +27,6 @@ const SideBarContent = () => {
       <div className={styles.filterSection}>
         <h4 className={styles.filterTitle}>Categorías</h4>
         <div className={styles.selectContainer}>
-         
           {categories?.map((category: string) => (
             <label key={category} className={styles.categoryItem}>
               <input
@@ -46,7 +47,6 @@ const SideBarContent = () => {
       <div className={styles.filterSection}>
         <h4 className={styles.filterTitle}>Rango de precios</h4>
         <div className={styles.radioGroup}>
-          
           <input
             type="number"
             placeholder="Precio mínimo"
@@ -63,9 +63,8 @@ const SideBarContent = () => {
           />
         </div>
       </div>
-      
     </div>
   );
 };
 
-export default SideBarContent;
+export default SideBar;

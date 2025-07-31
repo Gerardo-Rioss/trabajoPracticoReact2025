@@ -9,9 +9,3 @@ export function useProducts(){
     })
 }
 
-export const useCategories = () => {
-  return useQuery({
-    queryKey: ["categories"],
-    queryFn: productService.getCategories,
-  });
-};

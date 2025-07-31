@@ -2,7 +2,6 @@ import styles from "./header.module.css";
 import { Link, useSearchParams } from "react-router";
 import { updateSearchParam } from "../../utils/searchParams";
 import IconButtonWithBadge from "../MaterialComponent/IconButtonWithBadge/IconButtonWithBadge";
-import { FiSearch } from "react-icons/fi";
 
 
 export const Header = () => {
@@ -27,7 +26,6 @@ export const Header = () => {
         </Link>
       </div>
       <div className={styles.navCenterArea}>
-        {/* ///// */}
         <div className={styles.search}>
           <input
             className={styles.inputSearch}
@@ -36,12 +34,7 @@ export const Header = () => {
             value={searchParams.get("search") || ""}
             onChange={handleSearchChange}
           />
-          {/* <div className={styles.searchDivider}></div>
-          <button className={styles.buttonSearch} type="submit">
-            <FiSearch className={styles.searchIcon} />
-          </button> */}
         </div>
-        {/* ///// */}
       </div>
       <div className={styles.navRigthArea}>
         <IconButtonWithBadge></IconButtonWithBadge>
