@@ -40,7 +40,7 @@ const SideBar = () => {
               <span className={styles.categoryLabel}>{category}</span>
             </label>
           ))}
-          <span className={styles.selectArrow}>▼</span>
+          
         </div>
       </div>
 
