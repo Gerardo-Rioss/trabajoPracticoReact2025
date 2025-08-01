@@ -2,9 +2,10 @@
   background: #ffffff;
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  width: 280px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  width: 100%;
   max-width: 100%;
+  border: 1px solid #e2e8f0;
 }
 
 .header {
@@ -57,6 +58,31 @@
   margin-right: 0.75rem;
   width: 16px;
   height: 16px;
+  border: 1px solid #ddd;
+  outline: none;
+  background-color: white;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.checkbox:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.checkbox:checked::after {
+  content: '✓';
+  display: block;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  line-height: 14px;
+}
+
+.checkbox:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .categoryLabel {
@@ -95,9 +121,41 @@
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
   .container {
     width: 100%;
     padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .filterSection {
+    margin-bottom: 1rem;
+  }
+  
+  .header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem;
+    border-radius: 6px;
+  }
+  
+  .categoryItem {
+    padding: 0.4rem 0.6rem;
+  }
+  
+  .priceInput {
+    padding: 0.5rem;
+    font-size: 0.85rem;
   }
 }

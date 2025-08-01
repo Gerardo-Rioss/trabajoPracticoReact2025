@@ -4,6 +4,7 @@ import styles from "./Home.module.css"
 import ProductList from "../../components/product/ProductList/ProductList";
 import ProductCard from "../../components/product/ProductCard/ProductCard";
 
+
 function Home() {
   
   const { data: products=[], error } = useProducts();

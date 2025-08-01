@@ -6,18 +6,18 @@ import { Header } from "../Header/header";
 
 
 function Layout() {
-  
+
   return (
     <>
       <div className={styles.appContainer}>
         <div className={styles.header}>
-          <Header/>
+          <Header />
         </div>
         <div className={styles.mainContent}>
           <Outlet />
         </div>
         <div className={styles.sideBar}>
-          <SideBar/>
+          <SideBar />
         </div>
         <div className={styles.footer}>
           <FooterContent />
