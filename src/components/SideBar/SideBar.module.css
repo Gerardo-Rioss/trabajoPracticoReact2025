@@ -115,6 +115,18 @@
   transition: border 0.2s ease;
 }
 
+/* Eliminar spinners de inputs tipo number */
+.priceInput::-webkit-outer-spin-button,
+.priceInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.priceInput[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
 .priceInput:focus {
   outline: none;
   border-color: #007bff;
