@@ -37,7 +37,11 @@ export const Header = () => {
         </div>
       </div>
       <div className={styles.navRigthArea}>
-        <IconButtonWithBadge></IconButtonWithBadge>
+        <IconButtonWithBadge/>
+        <Link to="/createProduct">
+          <button className={styles.createButton}>🔽 Crear producto</button>
+        </Link>
+
       </div>
     </nav>
   );
