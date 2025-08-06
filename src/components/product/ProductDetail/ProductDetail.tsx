@@ -4,7 +4,7 @@ import { useCart } from "../../../context/CartContext";
 import { useParams } from "react-router";
 import { Link } from "react-router";
 import { useQuery } from "@tanstack/react-query";
-import { productService } from "../../../services/productService";
+import { api } from "../../../services/api";
 
 function ProductDetail() {
   const { id } = useParams<{ id: string }>();
@@ -12,7 +12,7 @@ function ProductDetail() {
 
   const { data: product , error,} = useQuery<Product>({
     queryKey: ["product",id],
-    queryFn:()=> productService.getProductById(Number(id)),
+    queryFn:()=> api.getProductById(Number(id)),
   });
   if (error) return <div>Error al buscar el producto</div>;
     

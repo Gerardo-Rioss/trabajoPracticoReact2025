@@ -2,7 +2,7 @@ import axios from "axios";
 import type { Product } from "../types/Product";
 const API_BASE_URL = "https://fakestoreapi.com";
 
-export const productService = {
+export const api = {
   //obtener todos los productos
   getProducts: async (): Promise<Product[]> => {
     const response = await axios.get(`${API_BASE_URL}/products`);
