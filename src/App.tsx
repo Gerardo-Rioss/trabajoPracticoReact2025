@@ -6,7 +6,7 @@ import { CartProvider } from "./context/CartContext";
 import Cart from "./pages/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
 import NotFound from "./components/NotFound/NotFound";
-import CreateProduct from "./pages/CreateProduct/CreacteProduct";
+import CreateProduct from "./pages/CreateProduct/CreateProduct";
 
 function App() {
   return (

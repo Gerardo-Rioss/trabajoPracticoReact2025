@@ -15,7 +15,9 @@ interface ProductResponse {
 }
 
 export default function CreateProduct() {
-  const [createdProduct, setCreatedProduct] = useState<ProductResponse | null>(null);
+  const [createdProduct, setCreatedProduct] = useState<ProductResponse | null>(
+    null
+  );
   const [errorMessage, setErrorMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
@@ -28,14 +30,19 @@ export default function CreateProduct() {
     setErrorMessage("");
 
     try {
-      const response = await axios.post( "https://fakestoreapi.com/products", values);
+      const response = await axios.post(
+        "https://fakestoreapi.com/products",
+        values
+      );
       console.log("Producto creado con éxito:", response.data);
       setCreatedProduct(response.data);
       resetForm();
     } catch (error) {
       console.error("Error al crear el producto:", error);
-      setErrorMessage("Ocurrió un error al crear el producto. Por favor, inténtalo de nuevo." );
-    }finally {
+      setErrorMessage(
+        "Ocurrió un error al crear el producto. Por favor, inténtalo de nuevo."
+      );
+    } finally {
       setIsSubmitting(false);
     }
   };
@@ -46,8 +53,6 @@ export default function CreateProduct() {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Crear nuevo producto</h2>
-
       {errorMessage && (
         <div className={styles.errorAlert}>
           <svg className={styles.errorIcon} viewBox="0 0 24 24">
