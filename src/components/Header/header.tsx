@@ -1,8 +1,7 @@
 import styles from "./header.module.css";
 import { Link, useSearchParams } from "react-router";
 import { updateSearchParam } from "../../utils/searchParams";
-import IconButtonWithBadge from "../MaterialComponent/IconButtonWithBadge/IconButtonWithBadge";
-
+import ButtonCartWithBadge from "../MaterialComponent/ButtonCartWithBadge/ButtonCartWithBadge";
 
 export const Header = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -37,11 +36,10 @@ export const Header = () => {
         </div>
       </div>
       <div className={styles.navRigthArea}>
-        <IconButtonWithBadge/>
+        <ButtonCartWithBadge />
         <Link to="/createProduct">
-          <button className={styles.createButton}>🔽 Crear producto</button>
+          <button className={styles.createButton}>Crear producto</button>
         </Link>
-
       </div>
     </nav>
   );

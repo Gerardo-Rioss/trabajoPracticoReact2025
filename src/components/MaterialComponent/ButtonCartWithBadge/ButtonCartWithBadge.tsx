@@ -12,7 +12,7 @@ const CartBadge = styled(Badge)`
   }
 `;
 
-function IconButtonWithBadge() {
+function ButtonCartWithBadge() {
   const { cart } = useCart();
   const itemCount = cart.length;
   return (
@@ -25,4 +25,4 @@ function IconButtonWithBadge() {
   );
 }
 
-export default IconButtonWithBadge;
+export default ButtonCartWithBadge;

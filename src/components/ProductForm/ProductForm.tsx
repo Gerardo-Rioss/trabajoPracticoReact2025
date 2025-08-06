@@ -1,4 +1,3 @@
-// src/components/ProductForm.tsx
 import { Formik, Form, Field, ErrorMessage, type FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 import type { ProductFormValues } from '../../types/ProductFormValues';

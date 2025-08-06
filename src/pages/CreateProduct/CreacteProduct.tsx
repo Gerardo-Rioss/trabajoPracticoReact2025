@@ -25,7 +25,7 @@ export default function CreateProduct() {
   ) => {
     try {
       const response = await axios.post('https://fakestoreapi.com/products', values);
-      console.log(response.data);
+      console.log('Producto creado con éxito:', response.data);
       setCreatedProduct(response.data);
       setErrorMessage('');
       resetForm();
