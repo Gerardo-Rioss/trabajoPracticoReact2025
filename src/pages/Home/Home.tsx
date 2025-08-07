@@ -4,10 +4,9 @@ import styles from "./Home.module.css"
 import ProductList from "../../components/product/ProductList/ProductList";
 import ProductCard from "../../components/product/ProductCard/ProductCard";
 
-
 function Home() {
   
-  const { data: products=[], error } = useProducts();
+  const { data: products=[], error, } = useProducts();
   const {filteredProducts}=useProductFilters(products)
   if (error) return <div>Error al cargar productos</div>;
 
@@ -23,7 +22,7 @@ function Home() {
      <ProductList title={"Titulo de seccion"}>
        {filteredProducts.map((product) => (
          <ProductCard key={product.id} product={product} />
-       ))}
+       ))}  
      </ProductList>
    </main>
  );

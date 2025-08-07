@@ -7,24 +7,6 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* .title {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: #2d3748;
-  font-weight: 700;
-  position: relative;
-  padding-bottom: 0.5rem;
-}
-
-.title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background: #4f46e5;
-} */
 
 .errorAlert {
   display: flex;

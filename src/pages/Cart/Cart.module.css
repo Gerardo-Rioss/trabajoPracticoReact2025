@@ -213,7 +213,7 @@
 }
 
 .continueShopping {
-  color: #4f46e5;
+  color: #3483fa;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -223,10 +223,10 @@
 }
 
 .continueShopping:hover {
-  color: #4338ca;
+  color: #2968c8;
   text-decoration: underline;
 }
-
+/* 3483fa - 2968c8*/
 .checkoutActions {
   display: flex;
   gap: 1rem;
