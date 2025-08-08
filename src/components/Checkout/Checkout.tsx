@@ -60,7 +60,7 @@ function Checkout() {
           {cart.map((product) => (
             <li key={product.id} className={styles.productItem}>
               <div className={styles.productInfo}>
-                <span className={styles.productName}>{product.name}</span>
+                <span className={styles.productName}>{product.title}</span>
                 <span className={styles.productPrice}>
                   ${product.price.toFixed(2)}
                 </span>
