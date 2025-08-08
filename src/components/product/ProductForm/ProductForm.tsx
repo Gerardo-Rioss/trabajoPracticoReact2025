@@ -1,7 +1,7 @@
 import { Formik, Form, Field, ErrorMessage, type FormikHelpers } from "formik";
 import * as Yup from "yup";
-import type { ProductFormValues } from "../../types/ProductFormValues";
-import { useCategories } from "../../hooks/useCategories";
+import type { ProductFormValues } from "../../../types/ProductFormValues";
+import { useCategories } from "../../../hooks/useCategories";
 import styles from "./ProductForm.module.css";
 
 interface ProductFormProps {

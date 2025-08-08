@@ -10,12 +10,27 @@ function ProductDetail() {
   const { id } = useParams<{ id: string }>();
   const { addToCart, isInCart } = useCart();
 
-  const { data: product , error,} = useQuery<Product>({
-    queryKey: ["product",id],
-    queryFn:()=> api.getProductById(Number(id)),
+  const { data: product, error, isLoading } = useQuery<Product>({
+    queryKey: ["product", id],
+    queryFn: () => api.getProductById(Number(id)),
   });
-  if (error) return <div>Error al buscar el producto</div>;
-    
+
+  if (isLoading) {
+    return (
+      <div className={styles.loading}>
+        <p>Cargando producto...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className={styles.error}>
+        <p>Error al cargar productos</p>
+      </div>
+    );
+  } 
+
   if (!product) {
     return (
       <div className={styles.notFound}>
@@ -49,7 +64,7 @@ function ProductDetail() {
             </div>
           ) : (
             <button
-              onClick={()=>addToCart(product)}
+              onClick={() => addToCart(product)}
               className={styles.buttonAdd}
             >
               Agregar al carrito

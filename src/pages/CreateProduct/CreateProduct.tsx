@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import axios from "axios";
-import ProductForm from "../../components/ProductForm/ProductForm";
+import ProductForm from "../../components/product/ProductForm/ProductForm";
 import type { ProductFormValues } from "../../types/ProductFormValues";
 import styles from "./CreateProduct.module.css";
 

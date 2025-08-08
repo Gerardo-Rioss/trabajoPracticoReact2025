@@ -1,12 +1,12 @@
 import Layout from "./components/Layout/Layout";
-import Home from "./pages/Home/Home";
-import ProductDetail from "./components/product/ProductDetail/ProductDetail";
 import { BrowserRouter, Route, Routes } from "react-router";
 import { CartProvider } from "./context/CartContext";
+import NotFound from "./components/NotFound/NotFound";
 import Cart from "./pages/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
-import NotFound from "./components/NotFound/NotFound";
 import CreateProduct from "./pages/CreateProduct/CreateProduct";
+import ProductDetail from "./components/product/ProductDetail/ProductDetail";
+import Home from "./pages/Home/Home";
 
 function App() {
   return (
