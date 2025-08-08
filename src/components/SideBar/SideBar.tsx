@@ -18,6 +18,11 @@ const SideBar = () => {
     setSearchParams(newParams);
   };
 
+  const handleClearFilters = () => {
+    // Limpia todos los filtros actuales (search, category, minPrice, maxPrice)
+    setSearchParams({});
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -62,6 +67,12 @@ const SideBar = () => {
             onChange={(e) => handlePriceChange("maxPrice", e.target.value)}
           />
         </div>
+      </div>
+
+      <div className={styles.actions}>
+        <button className={styles.clearButton} onClick={handleClearFilters}>
+          Limpiar filtros
+        </button>
       </div>
     </div>
   );

@@ -115,7 +115,6 @@
   transition: border 0.2s ease;
 }
 
-/* Eliminar spinners de inputs tipo number */
 .priceInput::-webkit-outer-spin-button,
 .priceInput::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -131,6 +130,43 @@
   outline: none;
   border-color: #007bff;
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem; 
+}
+
+.clearButton {
+  background-color: transparent;
+  color: #0d6efd;
+  border: 1.5px solid #0d6efd;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.clearButton:hover {
+  background-color: #0d6efd;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+  transform: translateY(-1px);
+}
+
+.clearButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(13, 110, 253, 0.2);
+}
+
+.clearButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.4);
 }
 
 /* Responsive Design */

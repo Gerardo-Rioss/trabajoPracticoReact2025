@@ -36,10 +36,13 @@ export const Header = () => {
         </div>
       </div>
       <div className={styles.navRigthArea}>
+        <div className={styles.navRigthAreaButtons}>
         <ButtonCartWithBadge />
         <Link to="/createProduct">
           <button className={styles.createButton}>Crear producto</button>
         </Link>
+
+        </div>
       </div>
     </nav>
   );
