@@ -1,0 +1,191 @@
+.navHeader {
+  display: grid;
+  grid-template-areas: "nav-left nav-center nav-right";
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #ffe600 0%, #ffed4e 100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navLeftArea {
+  grid-area: nav-left;
+}
+
+.logoImagen {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.logoImagen:hover {
+  transform: scale(1.05);
+}
+
+.navCenterArea {
+  grid-area: nav-center;
+}
+
+.navRightArea {
+  grid-area: nav-right;
+}
+
+.searchIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  padding: 0.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.buttonSearch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: #666;
+  border-radius: 4px;
+}
+
+.inputSearch {
+  flex: 1;
+  min-width: 0;
+  padding: 0.75rem 1rem;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+}
+
+.search:hover {
+  border-color: #4f46e5;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.search:focus-within {
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.inputSearch:focus {
+  outline: none;
+  border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navHeader {
+    grid-template-areas: 
+      "nav-left nav-right"
+      "nav-center nav-center";
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+  
+  .logoImagen {
+    width: 100px;
+  }
+  
+  .search {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navHeader {
+    padding: 0.75rem;
+  }
+  
+  .logoImagen {
+    width: 80px;
+  }
+  
+  .inputSearch {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+.createButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: #3483fa;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.createButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      background: #2968c8;
+
+}
+/* 3483fa - 2968c8*/
+
+
+.createButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.createButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.createButton:hover::before {
+  left: 100%;
+} 
+
+/* Para el icono del botón */
+.createButton svg {
+  font-size: 18px;
+} 
+
+
+.navRigthAreaButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
