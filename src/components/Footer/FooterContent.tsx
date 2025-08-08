@@ -10,12 +10,12 @@ export const FooterContent = () => {
             Trabajo Práctico - Rios Gerardo
           </h3>
           <p className={styles.footerDescription}>
-            Aplicación de e-commerce desarrollada con React y TypeScript - INFORMATORIO
+            Aplicación de e-commerce desarrollada con React y TypeScript.
           </p>
         </div>
         <div className={styles.footerLegal}>
           <p className={styles.copyright}>
-            © {new Date().getFullYear()} Todos los derechos reservados
+            © INFORMATORIO - {new Date().getFullYear()} Todos los derechos reservados
           </p>
         </div>
       </div>
