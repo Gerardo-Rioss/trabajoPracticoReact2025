@@ -122,22 +122,28 @@
 }
 /* 3483fa - 2968c8*/
 
-/* .submitButton {
-  color: #4f46e5;
-  text-decoration: none;
-  display: inline-flex;
+.cancelButton {
+  background-color: #f1f3f5;
+  color: #495057;
+  border: 1.5px solid #dee2e6;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
 }
 
-.submitButton:hover {
-  color: #4338ca;
-  text-decoration: underline;
+.cancelButton:hover {
+  background-color: #e9ecef;
+  box-shadow: 0 4px 12px rgba(73, 80, 87, 0.15);
 }
- */
-
 
 .submitButton:active {
   transform: translateY(0);
@@ -174,4 +180,11 @@
   .formTitle {
     font-size: 1.5rem;
   }
+}
+.buttonAccion {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }

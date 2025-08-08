@@ -3,6 +3,7 @@ import * as Yup from "yup";
 import type { ProductFormValues } from "../../../types/ProductFormValues";
 import { useCategories } from "../../../hooks/useCategories";
 import styles from "./ProductForm.module.css";
+import { useNavigate } from "react-router";
 
 interface ProductFormProps {
   onSubmit: (
@@ -26,6 +27,7 @@ const validationSchema = Yup.object({
 
 export default function ProductForm({ onSubmit }: ProductFormProps) {
   const { data: categories } = useCategories();
+  const navigate = useNavigate();
 
   return (
     <div className={styles.formContainer}>
@@ -139,18 +141,28 @@ export default function ProductForm({ onSubmit }: ProductFormProps) {
                 className={styles.errorMessage}
               />
             </div>
+            <div className={styles.buttonAccion}>
 
-            <button
-              type="submit"
-              className={styles.submitButton}
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? (
-                <span className={styles.spinner}></span>
-              ) : (
-                "Crear producto"
-              )}
-            </button>
+              <button
+                type="submit"
+                className={styles.submitButton}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <span className={styles.spinner}></span>
+                ) : (
+                  "Crear producto"
+                )}
+              </button>
+              <button
+                type="button"
+                className={styles.cancelButton}
+                onClick={() => navigate("/")}
+              >
+                Cancelar
+              </button>
+            </div>
+
           </Form>
         )}
       </Formik>
